@@ -1,0 +1,4 @@
+interface:
+  display_name: "角色动作工坊"
+  short_description: "统一生图、项目工作台、骨骼参考与游戏交付，按角色和衣装组织动作"
+  default_prompt: "使用 $character-motion，按当前项目选择生图、工作台、骨骼或接入分支，复用已有素材并交付所需动作。"

@@ -1,0 +1,122 @@
+name: Build Mac releases
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.plan.outputs.matrix }}
+      version: ${{ steps.plan.outputs.version }}
+      source: ${{ steps.plan.outputs.source }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - id: plan
+        env:
+          REF_TYPE: ${{ github.ref_type }}
+          REF_NAME: ${{ github.ref_name }}
+        run: |
+          python3 - <<'PY'
+          import json, os, pathlib, re
+          source = 'app' if pathlib.Path('app/VERSION').exists() else '.'
+          version = pathlib.Path(source, 'VERSION').read_text().strip()
+          assert re.fullmatch(r'\d+\.\d+\.\d+', version)
+          if os.environ['REF_TYPE'] == 'tag':
+              assert os.environ['REF_NAME'] == 'v' + version, 'Tag must match VERSION'
+          matrix = [{'arch': 'arm64', 'runner': 'macos-14'}, {'arch': 'x86_64', 'runner': 'macos-15-intel'}]
+          if version == '0.1.3':
+              matrix.append({'arch': 'universal', 'runner': 'macos-14'})
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
+              output.write(f'version={version}\nsource={source}\nmatrix={json.dumps({"include": matrix})}\n')
+          PY
+  build:
+    needs: plan
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJSON(needs.plan.outputs.matrix) }}
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: ${{ needs.plan.outputs.source }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - name: Build with pinned runtimes
+        run: python3 scripts/build_release.py --architecture '${{ matrix.arch }}'
+      - name: Verify app on matching CPU
+        env:
+          ARCH: ${{ matrix.arch }}
+          VERSION: ${{ needs.plan.outputs.version }}
+        run: |
+          native=()
+          if [[ "$ARCH" != universal ]]; then native=(--require-native); fi
+          python3 scripts/verify_release.py "output/release/MotionLab-$VERSION-$ARCH.zip" "${native[@]}"
+          runtime=$(uname -m)
+          output/release/MotionLab.app/Contents/Resources/runtime/$runtime/python/bin/python3 -B -m unittest discover -s scripts -p test_studio_update.py
+          output/release/MotionLab.app/Contents/Resources/runtime/$runtime/python/bin/python3 -B -m unittest discover -s scripts -p test_assemble_release.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: mac-${{ matrix.arch }}
+          retention-days: 14
+          if-no-files-found: error
+          path: |
+            ${{ needs.plan.outputs.source }}/output/release/*.zip
+            ${{ needs.plan.outputs.source }}/output/release/package-*.json
+            ${{ needs.plan.outputs.source }}/output/release/verification-*.json
+  assemble:
+    needs: [plan, build]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          pattern: mac-*
+          merge-multiple: true
+          path: release
+      - name: Validate artifacts and create update metadata
+        env:
+          VERSION: ${{ needs.plan.outputs.version }}
+          SOURCE: ${{ needs.plan.outputs.source }}
+        run: |
+          legacy=()
+          if [[ "$VERSION" != 0.1.3 ]]; then
+            curl --fail --location --retry 3 https://github.com/rainlotus97/motionlab-releases/releases/latest/download/update.json -o legacy.json
+            legacy=(--legacy legacy.json)
+          fi
+          python3 "$SOURCE/scripts/assemble_release.py" release --version "$VERSION" "${legacy[@]}"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: release-ready
+          retention-days: 14
+          path: release/
+  publish:
+    if: github.repository == 'rainlotus97/motionlab-releases' && startsWith(github.ref, 'refs/tags/v')
+    needs: [plan, assemble]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: release-ready
+          path: release
+      - name: Publish only after both native builds pass
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          VERSION: ${{ needs.plan.outputs.version }}
+        run: |
+          tag="v$VERSION"
+          if gh release view "$tag" --json isDraft > existing.json; then
+            python3 -c 'import json; assert json.load(open("existing.json"))["isDraft"], "Published releases must not be overwritten"'
+          else
+            gh release create "$tag" --verify-tag --draft --title "MotionLab $VERSION" --notes-file release/release-notes.md
+          fi
+          gh release upload "$tag" release/*.zip release/SHA256SUMS.txt release/update.json release/verification.json --clobber
+          gh release edit "$tag" --draft=false --latest --notes-file release/release-notes.md

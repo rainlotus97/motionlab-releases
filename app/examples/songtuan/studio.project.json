@@ -1,0 +1,80 @@
+{
+  "version": 1,
+  "id": "songtuan",
+  "name": "松团 · 日常装",
+  "sources": [
+    {
+      "type": "runtime",
+      "id": "soft-v8",
+      "name": "柔绒完整帧",
+      "path": "sources/soft/runtime/motion.runtime.json",
+      "originLabel": "导出原点",
+      "markerLabels": {
+        "stable-center": "配准参考点"
+      },
+      "markerLabelsByAction": {
+        "walk-S": {
+          "stable-center": "双眼中点"
+        },
+        "walk-SE": {
+          "stable-center": "双眼中点"
+        },
+        "walk-SW": {
+          "stable-center": "双眼中点"
+        },
+        "walk-E": {
+          "stable-center": "可见眼"
+        },
+        "walk-W": {
+          "stable-center": "可见眼"
+        },
+        "walk-NE": {
+          "stable-center": "双耳冠中点"
+        },
+        "walk-NW": {
+          "stable-center": "双耳冠中点"
+        },
+        "walk-N": {
+          "stable-center": "双耳冠中点"
+        },
+        "jump": {
+          "stable-center": "双眼中点"
+        }
+      },
+      "characterId": "songtuan",
+      "characterName": "松团"
+    }
+  ],
+  "provenancePaths": [],
+  "links": [],
+  "clipMetadata": {
+    "soft-v8/everyday/walk-S": {
+      "actionName": "跑动"
+    },
+    "soft-v8/everyday/walk-SE": {
+      "actionName": "跑动"
+    },
+    "soft-v8/everyday/walk-E": {
+      "actionName": "跑动"
+    },
+    "soft-v8/everyday/walk-NE": {
+      "actionName": "跑动"
+    },
+    "soft-v8/everyday/walk-N": {
+      "actionName": "跑动"
+    },
+    "soft-v8/everyday/walk-SW": {
+      "actionName": "跑动"
+    },
+    "soft-v8/everyday/walk-W": {
+      "actionName": "跑动"
+    },
+    "soft-v8/everyday/walk-NW": {
+      "actionName": "跑动"
+    },
+    "soft-v8/everyday/jump": {
+      "actionName": "蹦跳",
+      "direction": "SE"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "source": "User-provided approved image, 2026-10-25",
+  "file": "studio-icon.png",
+  "sha256": "5c13dce05f52453a16a1e96dc435603188d62de8c26f51582b43f6fac9d8f1d7",
+  "dimensions": [1254, 1254],
+  "usage": "Native application icon only: Dock, Finder and native About panel. Do not place in game or workbench pages.",
+  "processing": "Original pixels preserved. Installation uses sips and iconutil for macOS icon sizes.",
+  "generationService": "unknown; supplied by user, no new generation required"
+}

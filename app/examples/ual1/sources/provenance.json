@@ -1,0 +1,446 @@
+{
+  "downloadDate": "2026-10-24",
+  "credit": "Models and animations by Quaternius",
+  "sources": [
+    {
+      "file": "sources/ual1-root-motion.glb",
+      "pack": "ual1",
+      "sha256": "be684571ed655a1b892c2c07e6e2aeca053b606c442d34004adaf1d944090d01",
+      "bytes": 7620504,
+      "nativeClipCount": 43,
+      "clips": [
+        {
+          "clip": "A_TPose",
+          "duration": 2.5,
+          "samples": 151,
+          "profiles": [
+            "long",
+            "short",
+            "round"
+          ]
+        },
+        {
+          "clip": "Crouch_Fwd_Loop",
+          "duration": 2.0,
+          "samples": 121,
+          "profiles": [
+            "long",
+            "short",
+            "round"
+          ]
+        },
+        {
+          "clip": "Crouch_Idle_Loop",
+          "duration": 2.933333396911621,
+          "samples": 178,
+          "profiles": [
+            "long",
+            "short",
+            "round"
+          ]
+        },
+        {
+          "clip": "Dance_Loop",
+          "duration": 1.0,
+          "samples": 61,
+          "profiles": [
+            "long",
+            "short",
+            "round"
+          ]
+        },
+        {
+          "clip": "Death01",
+          "duration": 2.4000000953674316,
+          "samples": 146,
+          "profiles": [
+            "long",
+            "short",
+            "round"
+          ]
+        },
+        {
+          "clip": "Driving_Loop",
+          "duration": 1.6666666269302368,
+          "samples": 101,
+          "profiles": [
+            "long",
+            "short",
+            "round"
+          ]
+        },
+        {
+          "clip": "Fixing_Kneeling",
+          "duration": 5.199999809265137,
+          "samples": 313,
+          "profiles": [
+            "long",
+            "short",
+            "round"
+          ]
+        },
+        {
+          "clip": "Hit_Chest",
+          "duration": 0.3333333432674408,
+          "samples": 22,
+          "profiles": [
+            "long",
+            "short",
+            "round"
+          ]
+        },
+        {
+          "clip": "Hit_Head",
+          "duration": 0.4333333373069763,
+          "samples": 28,
+          "profiles": [
+            "long",
+            "short",
+            "round"
+          ]
+        },
+        {
+          "clip": "Idle_Loop",
+          "duration": 2.5,
+          "samples": 151,
+          "profiles": [
+            "long",
+            "short",
+            "round"
+          ]
+        },
+        {
+          "clip": "Idle_Talking_Loop",
+          "duration": 2.933333396911621,
+          "samples": 178,
+          "profiles": [
+            "long",
+            "short",
+            "round"
+          ]
+        },
+        {
+          "clip": "Idle_Torch_Loop",
+          "duration": 1.2666666507720947,
+          "samples": 77,
+          "profiles": [
+            "long",
+            "short",
+            "round"
+          ]
+        },
+        {
+          "clip": "Interact",
+          "duration": 2.0,
+          "samples": 121,
+          "profiles": [
+            "long",
+            "short",
+            "round"
+          ]
+        },
+        {
+          "clip": "Jog_Fwd_Loop",
+          "duration": 0.9333333373069763,
+          "samples": 58,
+          "profiles": [
+            "long",
+            "short",
+            "round"
+          ]
+        },
+        {
+          "clip": "Jump_Land",
+          "duration": 1.2666666507720947,
+          "samples": 77,
+          "profiles": [
+            "long",
+            "short",
+            "round"
+          ]
+        },
+        {
+          "clip": "Jump_Loop",
+          "duration": 2.5,
+          "samples": 151,
+          "profiles": [
+            "long",
+            "short",
+            "round"
+          ]
+        },
+        {
+          "clip": "Jump_Start",
+          "duration": 1.3333333730697632,
+          "samples": 82,
+          "profiles": [
+            "long",
+            "short",
+            "round"
+          ]
+        },
+        {
+          "clip": "PickUp_Table",
+          "duration": 0.8333333134651184,
+          "samples": 51,
+          "profiles": [
+            "long",
+            "short",
+            "round"
+          ]
+        },
+        {
+          "clip": "Pistol_Aim_Down",
+          "duration": 0.1666666716337204,
+          "samples": 12,
+          "profiles": [
+            "long",
+            "short",
+            "round"
+          ]
+        },
+        {
+          "clip": "Pistol_Aim_Neutral",
+          "duration": 0.1666666716337204,
+          "samples": 12,
+          "profiles": [
+            "long",
+            "short",
+            "round"
+          ]
+        },
+        {
+          "clip": "Pistol_Aim_Up",
+          "duration": 0.1666666716337204,
+          "samples": 12,
+          "profiles": [
+            "long",
+            "short",
+            "round"
+          ]
+        },
+        {
+          "clip": "Pistol_Idle_Loop",
+          "duration": 1.6666666269302368,
+          "samples": 101,
+          "profiles": [
+            "long",
+            "short",
+            "round"
+          ]
+        },
+        {
+          "clip": "Pistol_Reload",
+          "duration": 1.6666666269302368,
+          "samples": 101,
+          "profiles": [
+            "long",
+            "short",
+            "round"
+          ]
+        },
+        {
+          "clip": "Pistol_Shoot",
+          "duration": 0.6333333253860474,
+          "samples": 39,
+          "profiles": [
+            "long",
+            "short",
+            "round"
+          ]
+        },
+        {
+          "clip": "Punch_Cross",
+          "duration": 1.0,
+          "samples": 61,
+          "profiles": [
+            "long",
+            "short",
+            "round"
+          ]
+        },
+        {
+          "clip": "Punch_Jab",
+          "duration": 0.8666666746139526,
+          "samples": 54,
+          "profiles": [
+            "long",
+            "short",
+            "round"
+          ]
+        },
+        {
+          "clip": "Push_Loop",
+          "duration": 2.6666667461395264,
+          "samples": 162,
+          "profiles": [
+            "long",
+            "short",
+            "round"
+          ]
+        },
+        {
+          "clip": "Roll",
+          "duration": 1.4666666984558105,
+          "samples": 90,
+          "profiles": [
+            "long",
+            "short",
+            "round"
+          ]
+        },
+        {
+          "clip": "Sitting_Enter",
+          "duration": 1.2999999523162842,
+          "samples": 79,
+          "profiles": [
+            "long",
+            "short",
+            "round"
+          ]
+        },
+        {
+          "clip": "Sitting_Exit",
+          "duration": 1.0333333015441895,
+          "samples": 63,
+          "profiles": [
+            "long",
+            "short",
+            "round"
+          ]
+        },
+        {
+          "clip": "Sitting_Idle_Loop",
+          "duration": 1.6666666269302368,
+          "samples": 101,
+          "profiles": [
+            "long",
+            "short",
+            "round"
+          ]
+        },
+        {
+          "clip": "Sitting_Talking_Loop",
+          "duration": 2.933333396911621,
+          "samples": 178,
+          "profiles": [
+            "long",
+            "short",
+            "round"
+          ]
+        },
+        {
+          "clip": "Spell_Simple_Enter",
+          "duration": 0.5333333611488342,
+          "samples": 34,
+          "profiles": [
+            "long",
+            "short",
+            "round"
+          ]
+        },
+        {
+          "clip": "Spell_Simple_Exit",
+          "duration": 0.4333333373069763,
+          "samples": 28,
+          "profiles": [
+            "long",
+            "short",
+            "round"
+          ]
+        },
+        {
+          "clip": "Spell_Simple_Idle_Loop",
+          "duration": 2.0999999046325684,
+          "samples": 127,
+          "profiles": [
+            "long",
+            "short",
+            "round"
+          ]
+        },
+        {
+          "clip": "Spell_Simple_Shoot",
+          "duration": 0.5,
+          "samples": 31,
+          "profiles": [
+            "long",
+            "short",
+            "round"
+          ]
+        },
+        {
+          "clip": "Sprint_Loop",
+          "duration": 0.6666666865348816,
+          "samples": 42,
+          "profiles": [
+            "long",
+            "short",
+            "round"
+          ]
+        },
+        {
+          "clip": "Swim_Fwd_Loop",
+          "duration": 1.3333333730697632,
+          "samples": 82,
+          "profiles": [
+            "long",
+            "short",
+            "round"
+          ]
+        },
+        {
+          "clip": "Swim_Idle_Loop",
+          "duration": 3.3333332538604736,
+          "samples": 201,
+          "profiles": [
+            "long",
+            "short",
+            "round"
+          ]
+        },
+        {
+          "clip": "Sword_Attack",
+          "duration": 1.5333333015441895,
+          "samples": 93,
+          "profiles": [
+            "long",
+            "short",
+            "round"
+          ]
+        },
+        {
+          "clip": "Sword_Idle",
+          "duration": 1.6666666269302368,
+          "samples": 101,
+          "profiles": [
+            "long",
+            "short",
+            "round"
+          ]
+        },
+        {
+          "clip": "Walk_Formal_Loop",
+          "duration": 1.3333333730697632,
+          "samples": 82,
+          "profiles": [
+            "long",
+            "short",
+            "round"
+          ]
+        },
+        {
+          "clip": "Walk_Loop",
+          "duration": 1.3333333730697632,
+          "samples": 82,
+          "profiles": [
+            "long",
+            "short",
+            "round"
+          ]
+        }
+      ]
+    }
+  ],
+  "modifications": "glTF animation evaluation, quaternion SLERP, 60Hz sampling, fixed per-profile scale and floor, local translation bone-length profiles. Animal foot target edges are render-only links to original authored IK target nodes."
+}

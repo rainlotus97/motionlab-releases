@@ -1,0 +1,17 @@
+#!/bin/sh
+set -eu
+scripts=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd -P)
+arch=$(/usr/bin/uname -m)
+bundled="$scripts/../../runtime/$arch/python/bin/python3"
+if [ -x "$bundled" ]; then
+  python="$bundled"
+elif [ "$arch" = arm64 ] && [ -x "$scripts/../../runtime/x86_64/python/bin/python3" ]; then
+  python="$scripts/../../runtime/x86_64/python/bin/python3"
+elif [ -x "$scripts/../.venv/bin/python3" ]; then
+  python="$scripts/../.venv/bin/python3"
+else
+  python=python3
+fi
+script=$1
+shift
+exec "$python" -B "$scripts/$script" "$@"

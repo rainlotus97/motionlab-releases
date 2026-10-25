@@ -1,0 +1,4 @@
+/app/output/
+/app/.venv/
+**/__pycache__/
+.DS_Store

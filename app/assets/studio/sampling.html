@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>骨骼选帧工作台</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="sampling.css">
+<link rel="stylesheet" href="tool-theme.css">
+<header><div><span class="eyebrow">CHARACTER MOTION / SAMPLING</span><h1>骨骼选帧工作台</h1><p>先看完整运动，再保存可用于生图的姿态方案。</p></div><nav><a href="/">人物动作工作台</a></nav></header>
+<div id="error" class="notice error" role="alert" hidden></div>
+<div id="notice" class="notice" role="status" aria-live="polite"></div>
+<section id="confirmation" class="inline-confirm" role="alertdialog" aria-labelledby="confirmation-text" hidden><p id="confirmation-text"></p><div class="toolbar"><button id="confirmation-accept" class="primary">确认</button><button id="confirmation-cancel">取消</button></div></section>
+<section class="source-bar" aria-label="来源与观察角度">
+  <label class="source-picker">骨骼动作来源<select id="source"></select></label>
+  <label>身体比例<select id="profile"></select></label>
+  <label>观察方向<select id="direction"><option value="E">E · 右侧</option><option value="NE">NE · 右后</option><option value="N">N · 背面</option><option value="NW">NW · 左后</option><option value="W">W · 左侧</option><option value="SW">SW · 左前</option><option value="S">S · 正面</option><option value="SE">SE · 右前</option></select></label>
+  <label>相机角度（°）<input id="degrees" type="number" min="-360" max="360" step="1" value="0"></label>
+  <p id="source-info" class="hint"></p>
+</section>
+<main>
+<section class="preview-area">
+  <div class="stages">
+    <article class="stage-card"><div class="stage-heading"><h2>原版连续</h2><span class="badge">来源保留 · 不可覆盖</span></div><canvas id="continuous" width="480" height="480" aria-label="原始连续骨骼运动"></canvas><p id="continuous-readout" class="readout"></p></article>
+    <article class="stage-card"><div class="stage-heading"><h2>选帧预演</h2><span id="preview-badge" class="badge">尚未选帧</span></div><div class="canvas-wrap"><canvas id="sampled" width="480" height="480" aria-label="所选离散姿态预演"></canvas><p id="empty-preview">暂无选帧方案</p></div><p id="sampled-readout" class="readout"></p></article>
+  </div>
+  <div class="toolbar playback"><button id="play">暂停</button><button id="restart">从头播放</button><button id="previous">上一姿态</button><button id="next">下一姿态</button><label>速度<select id="speed"><option value="0.25">¼速</option><option value="0.5">半速</option><option value="1" selected>正常</option><option value="2">2倍</option></select></label><button id="review-wrap">末→首慢放</button></div>
+  <div class="display-options"><label><input id="trails" type="checkbox">手足轨迹</label><label><input id="ghost" type="checkbox">上一姿态叠影</label><label><input id="labels" type="checkbox">关节名称</label><span class="side-key"><i class="left"></i>解剖左／红 <i class="right"></i>解剖右／蓝</span></div>
+  <label class="seek-label">连续源时间 <output id="source-time">0 ms</output><input id="source-seek" type="range" min="0" max="1000" step="0.1" value="0"></label>
+  <section class="frames-section"><div class="section-heading"><h2>选中姿态与播放顺序</h2><span id="frame-count" class="badge">0 帧</span></div><div id="frames" class="frames" aria-label="选中姿态"></div><p class="hint">小数索引来自精确时间相位，可由相邻源姿态取样；不把它称为新增捕获帧。点击姿态可并排查看同一源时刻。</p></section>
+  <section class="audit-section"><h2>相位与环回检查</h2><p id="phase-audit">保存方案后显示来源相位审计。</p><p id="wrap-audit" class="hint"></p><p class="hint">半周期配对只检查时间相位；左右振幅、手臂走向、支撑与摆动足、末→首连续性仍需观看。原始来源也可能不完全对称。</p></section>
+</section>
+<aside>
+  <section><div class="section-heading"><h2>方案库</h2><span id="revision" class="badge">revision 0</span></div><button id="base" class="base-plan">原版连续 · 不可改写</button><button id="copy-base" class="full">复制原版连续为方案</button><div id="plans" class="plans"></div><p id="adopted" class="hint"></p><div class="toolbar"><button id="new">新建方案</button><button id="refresh">刷新方案</button></div></section>
+  <section><div class="section-heading"><h2>当前编辑</h2><span id="dirty" class="badge">原版观察</span></div><label>方案名称<input id="name" type="text" maxlength="120" placeholder="例如 E · 均匀8帧"></label><div class="toolbar"><button id="save" class="primary">保存方案</button><button id="duplicate">复制方案</button><button id="delete" class="danger">删除方案</button></div><button id="adopt" class="adopt-button">采用已保存方案</button><button id="cancel-adopt" class="full">取消采用 · 恢复原版默认</button><p class="hint">保存和打开都不会自动采用。只有“采用已保存方案”会改变后续生图使用的方案。</p></section>
+  <section><h2>精确相位预设</h2><div id="presets" class="toolbar"><button data-count="4">4 帧</button><button data-count="8">8 帧</button><button data-count="16">16 帧</button><button data-count="24">24 帧</button></div><button id="pair" class="full">补齐半周期配对</button><label>停留时长方式<select id="timing"><option value="even">均匀时长</option><option value="source">保留源相位间隔</option><option value="custom">逐帧自定义</option></select></label><label class="inline"><input id="loop" type="checkbox" checked>方案循环播放</label><p id="timing-info" class="hint"></p></section>
+  <section><h2>手选与当前姿态</h2><label>源索引（可小数）<input id="manual-index" type="number" min="0" step="any" value="0"></label><input id="manual-seek" type="range" min="0" max="79" step="0.001" value="0" aria-label="手动选择源姿态"><button id="add" class="full">加入当前源姿态</button><button id="replace" class="full">替换选中姿态 · 保留时长</button><p id="current-frame" class="hint"></p><label>当前姿态停留（ms）<input id="duration" type="number" min="1" max="60000" step="1"></label><div class="toolbar"><button id="earlier">前移</button><button id="later">后移</button><button id="remove">移除姿态</button></div></section>
+  <section><h2>交给下一步制作</h2><div class="toolbar"><button id="export">导出方案 JSON</button><button id="copy">复制会话指令</button></div><p class="hint">导出保存的方案，保留源文件哈希、身体比例、相机、姿态与时间。此处不生成角色图片。</p><textarea id="handoff" rows="5" readonly hidden aria-label="可复制的会话指令"></textarea></section>
+</aside>
+</main>
+<footer>共享选帧工作台 · 原版来源、保存方案、当前采用分别保留。人物生图与动作自然度需要单独验收。</footer>
+<script type="module" src="sampling.mjs"></script>
+<script type="module" src="tool-shell.mjs"></script>
+</html>

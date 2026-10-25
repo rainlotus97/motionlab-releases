@@ -1,0 +1,265 @@
+{
+  "version": 1,
+  "samples": [
+    {
+      "id": "songtuan",
+      "destination": "projects",
+      "clips": 9,
+      "steps": 40,
+      "files": {
+        "README.md": {
+          "sha256": "a5bd9d4fb3e8d93eb02e56732a1bdb235378d1450ad4ff25061c964187cab899",
+          "bytes": 690
+        },
+        "sources/soft/runtime/motion.runtime.json": {
+          "sha256": "8f8550f49e8469e2c2ccbbb7722c02536d5f984698c6a4ec7167e693309652a2",
+          "bytes": 53342
+        },
+        "sources/soft/runtime/songtuan-soft-v8--everyday--jump.webp": {
+          "sha256": "69a36eb016a84fa6cd17b330e362b5618880ade977b7856c57edbfdc29366ab8",
+          "bytes": 253178
+        },
+        "sources/soft/runtime/songtuan-soft-v8--everyday--walk-E.webp": {
+          "sha256": "d7e1d71b04ba349d8bf5c473dd1284d824f431981c364126425e5c70d7e36521",
+          "bytes": 103630
+        },
+        "sources/soft/runtime/songtuan-soft-v8--everyday--walk-N.webp": {
+          "sha256": "317bc86bb6713904aee2a066c9354852f644c0da149e7e3c09e7f138c23b467a",
+          "bytes": 103824
+        },
+        "sources/soft/runtime/songtuan-soft-v8--everyday--walk-NE.webp": {
+          "sha256": "e56e3623211810593ad952ea3023cbca98249a36689f18292b7778ba3996976d",
+          "bytes": 96722
+        },
+        "sources/soft/runtime/songtuan-soft-v8--everyday--walk-NW.webp": {
+          "sha256": "f853191878335230c0e64ca9c5339fa3c05584f31b96c9b01da1a93a51a708df",
+          "bytes": 96432
+        },
+        "sources/soft/runtime/songtuan-soft-v8--everyday--walk-S.webp": {
+          "sha256": "729bd8e23c39fb0ec775b03652d4d3ae7b3ede627bfc1a39a9789ae178f71c39",
+          "bytes": 105718
+        },
+        "sources/soft/runtime/songtuan-soft-v8--everyday--walk-SE.webp": {
+          "sha256": "0c238a52c45c45a9bdc874d4821ab00aacac6c9555de251780f73980dd5f3603",
+          "bytes": 111146
+        },
+        "sources/soft/runtime/songtuan-soft-v8--everyday--walk-SW.webp": {
+          "sha256": "f18897cef69024b80d6b938de44057210bad1bc60af246a6dde79d9eeb768f71",
+          "bytes": 111398
+        },
+        "sources/soft/runtime/songtuan-soft-v8--everyday--walk-W.webp": {
+          "sha256": "a619334cf37d1f4acbad19e0aba510323ce0162c7e26676ba620623589cefb12",
+          "bytes": 103344
+        },
+        "studio.project.json": {
+          "sha256": "a6612456ef79ecf4297db16d67734df8f56f4924ac1a24b8a858ae39aede37c0",
+          "bytes": 1835
+        }
+      }
+    },
+    {
+      "id": "ual1",
+      "destination": "references",
+      "clips": 43,
+      "library": "library.json",
+      "files": {
+        "README.md": {
+          "sha256": "caf07ece6083cb58eda353b8157067681d4f87bb92ee9d92ce49ca5cd59b17fc",
+          "bytes": 1079
+        },
+        "clips/ual1-a-tpose.json": {
+          "sha256": "a27b0e0ebd8b0dac403abcb86f07ef5a17a8900611e99c76bf5a2c971747c021",
+          "bytes": 655678
+        },
+        "clips/ual1-crouch-fwd-loop.json": {
+          "sha256": "4f79aafed21700cfda77359f9606e9f20eaae70e9aa5106b97953c53317c6882",
+          "bytes": 546384
+        },
+        "clips/ual1-crouch-idle-loop.json": {
+          "sha256": "8bddede701d50f99de19debf1aedbb71dd814d7836714cf8e9fe7b0a3bd88a99",
+          "bytes": 797513
+        },
+        "clips/ual1-dance-loop.json": {
+          "sha256": "1b73094ae4ce3a51ec1c4a4b048bb4c677622603ede94a45aeed4538f3ecc65f",
+          "bytes": 272371
+        },
+        "clips/ual1-death01.json": {
+          "sha256": "b1e9bb7e253b1b57f060c3906035c71ae9da9074d5f3e5cccfa9ea5dcd2399dc",
+          "bytes": 678290
+        },
+        "clips/ual1-driving-loop.json": {
+          "sha256": "5b3b936825480fb245f65007349d4d9ce3d2bc1aa2ea177cf1aeb342e4816c4a",
+          "bytes": 441312
+        },
+        "clips/ual1-fixing-kneeling.json": {
+          "sha256": "d16b99b87c365fd33e6bf84fb65c15c2ceb3db5f83a16d7b1e5c976790060af4",
+          "bytes": 1386454
+        },
+        "clips/ual1-hit-chest.json": {
+          "sha256": "9cacf0ec9ffa3af4030ed13e9d2181811d6b3d96524880fe0890e3a5014adbad",
+          "bytes": 98960
+        },
+        "clips/ual1-hit-head.json": {
+          "sha256": "cd82cab5d06f5ca3cb62b5a440eee2e92938067f9e9a37fc6ded16d9ce141fcb",
+          "bytes": 125630
+        },
+        "clips/ual1-idle-loop.json": {
+          "sha256": "e64e5b193f282d1188ba0f7994c4876dadf4df098ce8d30ce87df5f8c47d8017",
+          "bytes": 670507
+        },
+        "clips/ual1-idle-talking-loop.json": {
+          "sha256": "19fb84906176024e78b80b1ac6f70f39f86b451f59a14768931b7367bdd837f7",
+          "bytes": 795025
+        },
+        "clips/ual1-idle-torch-loop.json": {
+          "sha256": "007211616034168a9031b3def872946f2b9d5acc8f0d458fa6e5da2311e29bdd",
+          "bytes": 342474
+        },
+        "clips/ual1-interact.json": {
+          "sha256": "a22fd78c6b5cf2e4acfde297209e4434912f63b814da4b0e1071929041cc83f2",
+          "bytes": 535269
+        },
+        "clips/ual1-jog-fwd-loop.json": {
+          "sha256": "d528d5b4c5eeb464e4e21f3d0577fecb88bc08a2ca374553e9e35a2f306461b0",
+          "bytes": 267753
+        },
+        "clips/ual1-jump-land.json": {
+          "sha256": "e3c292f008034a60fb4fcbba731ddfe124ef7a563428e882ed378445a40f6e74",
+          "bytes": 343638
+        },
+        "clips/ual1-jump-loop.json": {
+          "sha256": "416bb660a4109a3fd4a7a67ff66547fb364ac94ddd8b5a563a59c24ff58a4fc2",
+          "bytes": 680715
+        },
+        "clips/ual1-jump-start.json": {
+          "sha256": "b29b5711620a46bbedba034bd0f7a345bf00363e2c390243cdbcd589a769e40d",
+          "bytes": 368575
+        },
+        "clips/ual1-pickup-table.json": {
+          "sha256": "0d5b7b49cb22efd4feba45ab241e19321914aceedfaba3332802cced7345594e",
+          "bytes": 231527
+        },
+        "clips/ual1-pistol-aim-down.json": {
+          "sha256": "6ee15d9778704f72d39d916895194a231f8c9d940f5efa9658c0d6a0d22f01fd",
+          "bytes": 55318
+        },
+        "clips/ual1-pistol-aim-neutral.json": {
+          "sha256": "8959d53c38e72190e55b9563c9a0308c13d8cbd6eec53464361937cf022ffc98",
+          "bytes": 55534
+        },
+        "clips/ual1-pistol-aim-up.json": {
+          "sha256": "9072e71cc1e32e65baed2910c3705f0ada185854d995136766459bf670aeb571",
+          "bytes": 57482
+        },
+        "clips/ual1-pistol-idle-loop.json": {
+          "sha256": "b2962944f1a8e0fbf085a216771af564b450a282f84b9edfcf8a372b271a9069",
+          "bytes": 456265
+        },
+        "clips/ual1-pistol-reload.json": {
+          "sha256": "e0cc7f388a8cca3439881027bf2628ffeb89c0d85eeaa51dc177f8f267600a6b",
+          "bytes": 455247
+        },
+        "clips/ual1-pistol-shoot.json": {
+          "sha256": "b7aa6117d62e2d7a941bb0efbbece12846d69ae867c81ec1136e988fa8150bcf",
+          "bytes": 177084
+        },
+        "clips/ual1-punch-cross.json": {
+          "sha256": "149967e9e427a7b3bb5d9baab7c6e5d8e47dcef639af4174fc31ad42e0445e1f",
+          "bytes": 268801
+        },
+        "clips/ual1-punch-jab.json": {
+          "sha256": "61e7bf0a67df0e26d533a5d3d0a65255d038f57919dac175be013a6088ad1b5a",
+          "bytes": 238843
+        },
+        "clips/ual1-push-loop.json": {
+          "sha256": "bfb5a4e0806b164c825721a9c20f00e9b07961a7621bb83ee1a4814210f73635",
+          "bytes": 724547
+        },
+        "clips/ual1-roll.json": {
+          "sha256": "93269a9db633ac70563ff54b538e41ce17b32e0cf0c953f7ff769ba5ca5df8ad",
+          "bytes": 422582
+        },
+        "clips/ual1-sitting-enter.json": {
+          "sha256": "315a7c3f3487b8a6a8d0635e899ec401a53980836566e31ea361331837cafb31",
+          "bytes": 349877
+        },
+        "clips/ual1-sitting-exit.json": {
+          "sha256": "c152d105e03607ee4eb7203858a5ea8bfa3d58ff5486bdc3e9626be7eb60d493",
+          "bytes": 277733
+        },
+        "clips/ual1-sitting-idle-loop.json": {
+          "sha256": "6555b7a3abb666ec571ed9d7b4175835f888b7ee2bdebdac080d34b314b36742",
+          "bytes": 443773
+        },
+        "clips/ual1-sitting-talking-loop.json": {
+          "sha256": "e1ede5a81e82c3116eace893f426328888a5380e47d21cc5732c37a60c428fce",
+          "bytes": 780427
+        },
+        "clips/ual1-spell-simple-enter.json": {
+          "sha256": "9b47fdc36c0342f09f436d72bee56214c93731c371f3609ea77518f81c0b2a4b",
+          "bytes": 154140
+        },
+        "clips/ual1-spell-simple-exit.json": {
+          "sha256": "0bab7ff972b91c63efd744a710b6d331c66739ecd26d94275e5e6923944cab48",
+          "bytes": 127186
+        },
+        "clips/ual1-spell-simple-idle-loop.json": {
+          "sha256": "ffb1780dcb0aa4e4c49a9973da7cbdbb9bdc07f42b6c1c60ddd9226ded739c3a",
+          "bytes": 572810
+        },
+        "clips/ual1-spell-simple-shoot.json": {
+          "sha256": "dfbc183632017f2c9cb7eeb3636b8b1918188f0d1910984fc1a6aac4a8bf3991",
+          "bytes": 141008
+        },
+        "clips/ual1-sprint-loop.json": {
+          "sha256": "232295a77c7515da9d9bc62646c018e002b122dc6fc1a9785ac135b01cfd8f90",
+          "bytes": 195620
+        },
+        "clips/ual1-swim-fwd-loop.json": {
+          "sha256": "ebb278b3ae9f42792eeb794458dc6f5f8171bf554637ae41f22685c8ed32af66",
+          "bytes": 390189
+        },
+        "clips/ual1-swim-idle-loop.json": {
+          "sha256": "48bd4090c040cb18af98c3dd7f44b7b8d0dd60c9aebcc9bc58d747b3b7f22cca",
+          "bytes": 901943
+        },
+        "clips/ual1-sword-attack.json": {
+          "sha256": "e5b647b18c69d8ef6e45fd4becc1a56a423c1c4b14bd5b8d548f24f5195f57c9",
+          "bytes": 417735
+        },
+        "clips/ual1-sword-idle.json": {
+          "sha256": "456de74f064e2a1ad8a060c3c0554df99bb0ec95909cff6c8f06f2f55f70d123",
+          "bytes": 458154
+        },
+        "clips/ual1-walk-formal-loop.json": {
+          "sha256": "e62cb0c421dacc2d12e2efd43d5d41257ba8749ecc8696442bda2b8f044b775d",
+          "bytes": 369898
+        },
+        "clips/ual1-walk-loop.json": {
+          "sha256": "43f1834ff43e50557a22e7948fc869204728fda93c6ed2f6da84c7593f4f7479",
+          "bytes": 369785
+        },
+        "library.json": {
+          "sha256": "b9350886a61922cba749aed0cc8e58958e11c5b4c017567463d434a907d10d89",
+          "bytes": 15148
+        },
+        "sources/provenance.json": {
+          "sha256": "14bc37c9c5d4364ef48795aefd21874705acb67e31a88b3ff27affe730345f79",
+          "bytes": 9926
+        },
+        "sources/ual1-license.txt": {
+          "sha256": "67e65a88def1ce573211f5cac3f514014abeface8fe48309c010491186b3a89a",
+          "bytes": 318
+        },
+        "sources/ual1-readme.txt": {
+          "sha256": "a7da55b934fe96d4e1b9205205289b9fc1dc0497189a9a703610f71ddf400710",
+          "bytes": 682
+        },
+        "sources/ual1-root-motion.glb": {
+          "sha256": "be684571ed655a1b892c2c07e6e2aeca053b606c442d34004adaf1d944090d01",
+          "bytes": 7620504
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,2264 @@
+{
+  "version": 1,
+  "character": {
+    "id": "songtuan-soft-v8",
+    "name": "松团·柔绒整帧跑步"
+  },
+  "canvas": [
+    256,
+    256
+  ],
+  "origin": [
+    128,
+    220
+  ],
+  "scale": 1,
+  "background": "transparent",
+  "sourceHashes": {
+    "everyday-walk-S-0": {
+      "path": "frames/everyday-walk-S-0.png",
+      "inputPath": "frames/everyday-walk-S-0.png",
+      "sha256": "93f5a317c4b2560dc3e68a3f5be693144b1a79e9c56eafd18c016cbb35d3bdc1",
+      "bytes": 87324,
+      "size": [
+        242,
+        243
+      ],
+      "pixel_ratio": 1.55,
+      "bundled": false
+    },
+    "everyday-walk-S-1": {
+      "path": "frames/everyday-walk-S-1.png",
+      "inputPath": "frames/everyday-walk-S-1.png",
+      "sha256": "fbc09946908e7f3f990139cf0dd80a29cfa6d249b78d910da42027297b3691e2",
+      "bytes": 83231,
+      "size": [
+        227,
+        242
+      ],
+      "pixel_ratio": 1.55,
+      "bundled": false
+    },
+    "everyday-walk-S-2": {
+      "path": "frames/everyday-walk-S-2.png",
+      "inputPath": "frames/everyday-walk-S-2.png",
+      "sha256": "5aeead837b3e3ffcfd96a19621fc1dd7ec27f4c5dbcf7c3e93707cd97948d49f",
+      "bytes": 82404,
+      "size": [
+        227,
+        240
+      ],
+      "pixel_ratio": 1.55,
+      "bundled": false
+    },
+    "everyday-walk-S-3": {
+      "path": "frames/everyday-walk-S-3.png",
+      "inputPath": "frames/everyday-walk-S-3.png",
+      "sha256": "c1986a6aaf6241ca407120a0b872187b2824b963423553b66a0b8d0247fd0d06",
+      "bytes": 82508,
+      "size": [
+        233,
+        235
+      ],
+      "pixel_ratio": 1.55,
+      "bundled": false
+    },
+    "everyday-walk-SE-0": {
+      "path": "frames/everyday-walk-SE-0.png",
+      "inputPath": "frames/everyday-walk-SE-0.png",
+      "sha256": "3047571f0684f41564ad09222e04cfaa3dd1b29f7069fe2fa094fa7c1645ad29",
+      "bytes": 91410,
+      "size": [
+        260,
+        229
+      ],
+      "pixel_ratio": 1.55,
+      "bundled": false
+    },
+    "everyday-walk-SE-1": {
+      "path": "frames/everyday-walk-SE-1.png",
+      "inputPath": "frames/everyday-walk-SE-1.png",
+      "sha256": "38208f7c08e758fe334e990c1fcae32522ed3fccdc71ee3992c6f67c5e5e77fb",
+      "bytes": 88040,
+      "size": [
+        256,
+        229
+      ],
+      "pixel_ratio": 1.55,
+      "bundled": false
+    },
+    "everyday-walk-SE-2": {
+      "path": "frames/everyday-walk-SE-2.png",
+      "inputPath": "frames/everyday-walk-SE-2.png",
+      "sha256": "e641943e63f887333ebb5410b0d147e4826b3da1855997d302d8874192d06599",
+      "bytes": 90590,
+      "size": [
+        259,
+        232
+      ],
+      "pixel_ratio": 1.55,
+      "bundled": false
+    },
+    "everyday-walk-SE-3": {
+      "path": "frames/everyday-walk-SE-3.png",
+      "inputPath": "frames/everyday-walk-SE-3.png",
+      "sha256": "58b18e0abaf993a6d20c832cbd600e064242b989e3aac01c5085b4da7ac62db5",
+      "bytes": 85726,
+      "size": [
+        258,
+        226
+      ],
+      "pixel_ratio": 1.55,
+      "bundled": false
+    },
+    "everyday-walk-E-0": {
+      "path": "frames/everyday-walk-E-0.png",
+      "inputPath": "frames/everyday-walk-E-0.png",
+      "sha256": "60805937032533fdae6e82bc9eacce141f80df177bbae6ca5d2c1e131d2c2446",
+      "bytes": 87029,
+      "size": [
+        264,
+        229
+      ],
+      "pixel_ratio": 1.55,
+      "bundled": false
+    },
+    "everyday-walk-E-1": {
+      "path": "frames/everyday-walk-E-1.png",
+      "inputPath": "frames/everyday-walk-E-1.png",
+      "sha256": "c1ea58a0c5b111e494611055ab55157b23f300ebdb91927f14a384a4e37e9cbc",
+      "bytes": 79836,
+      "size": [
+        258,
+        217
+      ],
+      "pixel_ratio": 1.55,
+      "bundled": false
+    },
+    "everyday-walk-E-2": {
+      "path": "frames/everyday-walk-E-2.png",
+      "inputPath": "frames/everyday-walk-E-2.png",
+      "sha256": "9ff0a2f829d6334c1862efbc5e3fee8697420fd0323c3b11628fa485ecb9d986",
+      "bytes": 84995,
+      "size": [
+        259,
+        227
+      ],
+      "pixel_ratio": 1.55,
+      "bundled": false
+    },
+    "everyday-walk-E-3": {
+      "path": "frames/everyday-walk-E-3.png",
+      "inputPath": "frames/everyday-walk-E-3.png",
+      "sha256": "61aeb66cbb40b00fa6a03657a3c426e1369b31338dde1a5abc11e7b16a78d839",
+      "bytes": 84141,
+      "size": [
+        261,
+        229
+      ],
+      "pixel_ratio": 1.55,
+      "bundled": false
+    },
+    "everyday-walk-NE-0": {
+      "path": "frames/everyday-walk-NE-0.png",
+      "inputPath": "frames/everyday-walk-NE-0.png",
+      "sha256": "ca5b0d37650f6f6acf1a3e855bca334801ebd9bca9729df7298c2d50792e2e09",
+      "bytes": 183363,
+      "size": [
+        398,
+        331
+      ],
+      "pixel_ratio": 2.4,
+      "bundled": false
+    },
+    "everyday-walk-NE-1": {
+      "path": "frames/everyday-walk-NE-1.png",
+      "inputPath": "frames/everyday-walk-NE-1.png",
+      "sha256": "25c8e564c42397226d9cb86b81a170c154bc0df6ba1f21cc77d987a0cb67353a",
+      "bytes": 172348,
+      "size": [
+        384,
+        328
+      ],
+      "pixel_ratio": 2.4,
+      "bundled": false
+    },
+    "everyday-walk-NE-2": {
+      "path": "frames/everyday-walk-NE-2.png",
+      "inputPath": "frames/everyday-walk-NE-2.png",
+      "sha256": "4be94762131a0097d5b43929fabb5ff8bb2bf0f1d4c5ba68dc397080841e4f4f",
+      "bytes": 180825,
+      "size": [
+        391,
+        340
+      ],
+      "pixel_ratio": 2.4,
+      "bundled": false
+    },
+    "everyday-walk-NE-3": {
+      "path": "frames/everyday-walk-NE-3.png",
+      "inputPath": "frames/everyday-walk-NE-3.png",
+      "sha256": "4ad9e17b782e904e1306c7ec8df1fab6db55deff80f15efca948e257d359699f",
+      "bytes": 167350,
+      "size": [
+        378,
+        324
+      ],
+      "pixel_ratio": 2.4,
+      "bundled": false
+    },
+    "everyday-walk-N-0": {
+      "path": "frames/everyday-walk-N-0.png",
+      "inputPath": "frames/everyday-walk-N-0.png",
+      "sha256": "2198e3143edeff8caf5cdf6e3485415106250325e760a5220261a21b3c44b22f",
+      "bytes": 81925,
+      "size": [
+        195,
+        248
+      ],
+      "pixel_ratio": 1.55,
+      "bundled": false
+    },
+    "everyday-walk-N-1": {
+      "path": "frames/everyday-walk-N-1.png",
+      "inputPath": "frames/everyday-walk-N-1.png",
+      "sha256": "4e1f2e93eff3574fcdf5bc2ffe7b1c502f5a0302ea2c57e16c72b8ff435b9b14",
+      "bytes": 83018,
+      "size": [
+        199,
+        250
+      ],
+      "pixel_ratio": 1.55,
+      "bundled": false
+    },
+    "everyday-walk-N-2": {
+      "path": "frames/everyday-walk-N-2.png",
+      "inputPath": "frames/everyday-walk-N-2.png",
+      "sha256": "cf196f75389be8aa50cad79d738062f2170e80d6b9086f17cb9943fb24b52728",
+      "bytes": 82913,
+      "size": [
+        198,
+        251
+      ],
+      "pixel_ratio": 1.55,
+      "bundled": false
+    },
+    "everyday-walk-N-3": {
+      "path": "frames/everyday-walk-N-3.png",
+      "inputPath": "frames/everyday-walk-N-3.png",
+      "sha256": "dc238cba288e099e7fbd9e84c4ba538a0266f9b1d6e4b206d46edb353ed97934",
+      "bytes": 81594,
+      "size": [
+        196,
+        252
+      ],
+      "pixel_ratio": 1.55,
+      "bundled": false
+    },
+    "everyday-walk-SW-0": {
+      "path": "frames/everyday-walk-SW-0.png",
+      "inputPath": "frames/everyday-walk-SW-0.png",
+      "sha256": "f7fba29aafcf86199cb2ff8bfd01217247089188132d7aec2143084cff474e71",
+      "bytes": 91264,
+      "size": [
+        260,
+        229
+      ],
+      "pixel_ratio": 1.55,
+      "bundled": false
+    },
+    "everyday-walk-SW-1": {
+      "path": "frames/everyday-walk-SW-1.png",
+      "inputPath": "frames/everyday-walk-SW-1.png",
+      "sha256": "ffc7dbc321d17729216b89451f074178c7c8b473b02e3c16bec6937ff074a3fc",
+      "bytes": 88133,
+      "size": [
+        256,
+        229
+      ],
+      "pixel_ratio": 1.55,
+      "bundled": false
+    },
+    "everyday-walk-SW-2": {
+      "path": "frames/everyday-walk-SW-2.png",
+      "inputPath": "frames/everyday-walk-SW-2.png",
+      "sha256": "ffb8eb84e7a2a7d4149252a1d38a4aa94d4011d5e80458e232d8f81e8291424f",
+      "bytes": 90631,
+      "size": [
+        259,
+        232
+      ],
+      "pixel_ratio": 1.55,
+      "bundled": false
+    },
+    "everyday-walk-SW-3": {
+      "path": "frames/everyday-walk-SW-3.png",
+      "inputPath": "frames/everyday-walk-SW-3.png",
+      "sha256": "da950eb3e221689f8c428a2c2fc7382724ff69fa340426efb74b916d30f4f4ce",
+      "bytes": 85742,
+      "size": [
+        258,
+        226
+      ],
+      "pixel_ratio": 1.55,
+      "bundled": false
+    },
+    "everyday-walk-W-0": {
+      "path": "frames/everyday-walk-W-0.png",
+      "inputPath": "frames/everyday-walk-W-0.png",
+      "sha256": "67915bd18a2ced55ed4264cd4791594a090e458f674f58e189e23bcc8adff216",
+      "bytes": 87173,
+      "size": [
+        264,
+        229
+      ],
+      "pixel_ratio": 1.55,
+      "bundled": false
+    },
+    "everyday-walk-W-1": {
+      "path": "frames/everyday-walk-W-1.png",
+      "inputPath": "frames/everyday-walk-W-1.png",
+      "sha256": "211bc59f4a309a38213b3f28474b41b5e42181da720574a768a80476e66edea2",
+      "bytes": 79349,
+      "size": [
+        258,
+        217
+      ],
+      "pixel_ratio": 1.55,
+      "bundled": false
+    },
+    "everyday-walk-W-2": {
+      "path": "frames/everyday-walk-W-2.png",
+      "inputPath": "frames/everyday-walk-W-2.png",
+      "sha256": "e82a22be721b1bb68ae0c65fba2152470569a5211caff1943728fdf49f0d091c",
+      "bytes": 84788,
+      "size": [
+        259,
+        227
+      ],
+      "pixel_ratio": 1.55,
+      "bundled": false
+    },
+    "everyday-walk-W-3": {
+      "path": "frames/everyday-walk-W-3.png",
+      "inputPath": "frames/everyday-walk-W-3.png",
+      "sha256": "e931089622dfa58b74dc732899c7fba4bb41a92dcc4214f00fcaeb806d3456f2",
+      "bytes": 84048,
+      "size": [
+        261,
+        229
+      ],
+      "pixel_ratio": 1.55,
+      "bundled": false
+    },
+    "everyday-walk-NW-0": {
+      "path": "frames/everyday-walk-NW-0.png",
+      "inputPath": "frames/everyday-walk-NW-0.png",
+      "sha256": "0e9ae5b51080b9f19214c3f70526cc867082cd0b62e1ebeff0d03e0328d06669",
+      "bytes": 183249,
+      "size": [
+        398,
+        331
+      ],
+      "pixel_ratio": 2.4,
+      "bundled": false
+    },
+    "everyday-walk-NW-1": {
+      "path": "frames/everyday-walk-NW-1.png",
+      "inputPath": "frames/everyday-walk-NW-1.png",
+      "sha256": "f6fd9595e0b74593fa2e15c97cea4f0bf9567c76f7472f621ed7cc05880b2bb6",
+      "bytes": 172593,
+      "size": [
+        384,
+        328
+      ],
+      "pixel_ratio": 2.4,
+      "bundled": false
+    },
+    "everyday-walk-NW-2": {
+      "path": "frames/everyday-walk-NW-2.png",
+      "inputPath": "frames/everyday-walk-NW-2.png",
+      "sha256": "312f617ef2b3815a9a309bcf284242926ccbf880a8b7ff70833da67b21e6a7e8",
+      "bytes": 180856,
+      "size": [
+        391,
+        340
+      ],
+      "pixel_ratio": 2.4,
+      "bundled": false
+    },
+    "everyday-walk-NW-3": {
+      "path": "frames/everyday-walk-NW-3.png",
+      "inputPath": "frames/everyday-walk-NW-3.png",
+      "sha256": "e6f7f1afa861f1bea215d3957d72755568fa5f20f743c2d1df14ef97e5afc692",
+      "bytes": 167297,
+      "size": [
+        378,
+        324
+      ],
+      "pixel_ratio": 2.4,
+      "bundled": false
+    },
+    "everyday-jump-0": {
+      "path": "frames/everyday-jump-0.png",
+      "inputPath": "frames/everyday-jump-0.png",
+      "sha256": "1f774068901d3443521bfb1ba0315a0104c27481aa80263cde06555b67c93917",
+      "bytes": 88894,
+      "size": [
+        239,
+        233
+      ],
+      "pixel_ratio": 1.47,
+      "bundled": false
+    },
+    "everyday-jump-1": {
+      "path": "frames/everyday-jump-1.png",
+      "inputPath": "frames/everyday-jump-1.png",
+      "sha256": "91262dd64a54c1d0bf788f260a084c48219bdad30bcc6a4258e50811f3b56e37",
+      "bytes": 85462,
+      "size": [
+        256,
+        207
+      ],
+      "pixel_ratio": 1.47,
+      "bundled": false
+    },
+    "everyday-jump-2": {
+      "path": "frames/everyday-jump-2.png",
+      "inputPath": "frames/everyday-jump-2.png",
+      "sha256": "e55fda63529510c7eed0ecd116f379fe77879d45d164a38d08b96ca44076a66d",
+      "bytes": 95716,
+      "size": [
+        252,
+        251
+      ],
+      "pixel_ratio": 1.47,
+      "bundled": false
+    },
+    "everyday-jump-3": {
+      "path": "frames/everyday-jump-3.png",
+      "inputPath": "frames/everyday-jump-3.png",
+      "sha256": "4f5a31957f7d4395da8473f4ce601fe7e8894d4a0c50ebb84824845dce71ce91",
+      "bytes": 96554,
+      "size": [
+        260,
+        242
+      ],
+      "pixel_ratio": 1.47,
+      "bundled": false
+    },
+    "everyday-jump-4": {
+      "path": "frames/everyday-jump-4.png",
+      "inputPath": "frames/everyday-jump-4.png",
+      "sha256": "1e746ff5177d873821f0ce8ae2618466ae3a492d52c6498aec9b65954df0313c",
+      "bytes": 94066,
+      "size": [
+        257,
+        233
+      ],
+      "pixel_ratio": 1.47,
+      "bundled": false
+    },
+    "everyday-jump-5": {
+      "path": "frames/everyday-jump-5.png",
+      "inputPath": "frames/everyday-jump-5.png",
+      "sha256": "50c22e35e4186b2222e63ca2fcac693b56ce3bbeb6a1e0b5523fd1f8a5b8e732",
+      "bytes": 93740,
+      "size": [
+        261,
+        229
+      ],
+      "pixel_ratio": 1.47,
+      "bundled": false
+    },
+    "everyday-jump-6": {
+      "path": "frames/everyday-jump-6.png",
+      "inputPath": "frames/everyday-jump-6.png",
+      "sha256": "d6323c868ca8fa1f3da54cb87c4627cdacb9ee3b37938d36fde590bfc70f834f",
+      "bytes": 87608,
+      "size": [
+        257,
+        208
+      ],
+      "pixel_ratio": 1.47,
+      "bundled": false
+    },
+    "everyday-jump-7": {
+      "path": "frames/everyday-jump-7.png",
+      "inputPath": "frames/everyday-jump-7.png",
+      "sha256": "0499627da5e962a7f1e9a43785c977775d38f43924227cca5c1d636a3a9906cb",
+      "bytes": 93872,
+      "size": [
+        250,
+        237
+      ],
+      "pixel_ratio": 1.47,
+      "bundled": false
+    }
+  },
+  "variants": {
+    "everyday": {
+      "actions": {
+        "walk-S": {
+          "atlas": "songtuan-soft-v8--everyday--walk-S.webp",
+          "atlasSize": [
+            1024,
+            256
+          ],
+          "grid": [
+            4,
+            1
+          ],
+          "cellSize": [
+            256,
+            256
+          ],
+          "frames": [
+            {
+              "rect": [
+                0,
+                0,
+                256,
+                256
+              ],
+              "bounds": [
+                49,
+                65,
+                205,
+                222
+              ],
+              "origin": [
+                128,
+                220
+              ],
+              "markers": {
+                "stable-center": [
+                  147.83354838709676,
+                  122.14258064516129
+                ]
+              },
+              "source": "everyday-walk-S-0",
+              "sourceRect": [
+                0,
+                0,
+                242,
+                243
+              ]
+            },
+            {
+              "rect": [
+                256,
+                0,
+                512,
+                256
+              ],
+              "bounds": [
+                54,
+                63,
+                200,
+                219
+              ],
+              "origin": [
+                128,
+                220
+              ],
+              "markers": {
+                "stable-center": [
+                  147.93225806451613,
+                  122.29483870967742
+                ]
+              },
+              "source": "everyday-walk-S-1",
+              "sourceRect": [
+                0,
+                0,
+                227,
+                242
+              ]
+            },
+            {
+              "rect": [
+                512,
+                0,
+                768,
+                256
+              ],
+              "bounds": [
+                58,
+                65,
+                204,
+                220
+              ],
+              "origin": [
+                128,
+                220
+              ],
+              "markers": {
+                "stable-center": [
+                  147.77999999999997,
+                  122.7625806451613
+                ]
+              },
+              "source": "everyday-walk-S-2",
+              "sourceRect": [
+                0,
+                0,
+                227,
+                240
+              ]
+            },
+            {
+              "rect": [
+                768,
+                0,
+                1024,
+                256
+              ],
+              "bounds": [
+                53,
+                68,
+                203,
+                220
+              ],
+              "origin": [
+                128,
+                220
+              ],
+              "markers": {
+                "stable-center": [
+                  147.7748387096774,
+                  124.64193548387095
+                ]
+              },
+              "source": "everyday-walk-S-3",
+              "sourceRect": [
+                0,
+                0,
+                233,
+                235
+              ]
+            }
+          ],
+          "sha256": "729bd8e23c39fb0ec775b03652d4d3ae7b3ede627bfc1a39a9789ae178f71c39",
+          "bytes": 105718,
+          "loop": true,
+          "sequence": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "durations_ms": [
+            160,
+            160,
+            160,
+            160
+          ],
+          "events": [],
+          "root_motion": null,
+          "name": "向南跑动",
+          "gait": {
+            "kind": "whole-frame-run-v8-soft",
+            "cycleMs": 640,
+            "projectedForward": [
+              0,
+              0.45
+            ],
+            "rootVelocityPxPerMs": [
+              0.0,
+              0.025312499999999998
+            ],
+            "rootCycleDeltaPx": [
+              0,
+              16.2
+            ],
+            "worldFootLock": false,
+            "authoredPoses": 4
+          }
+        },
+        "walk-SE": {
+          "atlas": "songtuan-soft-v8--everyday--walk-SE.webp",
+          "atlasSize": [
+            1024,
+            256
+          ],
+          "grid": [
+            4,
+            1
+          ],
+          "cellSize": [
+            256,
+            256
+          ],
+          "frames": [
+            {
+              "rect": [
+                0,
+                0,
+                256,
+                256
+              ],
+              "bounds": [
+                44,
+                68,
+                212,
+                216
+              ],
+              "origin": [
+                128,
+                220
+              ],
+              "markers": {
+                "stable-center": [
+                  175.00645161290322,
+                  129.59161290322578
+                ]
+              },
+              "source": "everyday-walk-SE-0",
+              "sourceRect": [
+                0,
+                0,
+                260,
+                229
+              ]
+            },
+            {
+              "rect": [
+                256,
+                0,
+                512,
+                256
+              ],
+              "bounds": [
+                46,
+                71,
+                211,
+                219
+              ],
+              "origin": [
+                128,
+                220
+              ],
+              "markers": {
+                "stable-center": [
+                  174.381935483871,
+                  130.84451612903226
+                ]
+              },
+              "source": "everyday-walk-SE-1",
+              "sourceRect": [
+                0,
+                0,
+                256,
+                229
+              ]
+            },
+            {
+              "rect": [
+                512,
+                0,
+                768,
+                256
+              ],
+              "bounds": [
+                42,
+                73,
+                209,
+                223
+              ],
+              "origin": [
+                128,
+                220
+              ],
+              "markers": {
+                "stable-center": [
+                  174.22451612903225,
+                  133.1483870967742
+                ]
+              },
+              "source": "everyday-walk-SE-2",
+              "sourceRect": [
+                0,
+                0,
+                259,
+                232
+              ]
+            },
+            {
+              "rect": [
+                768,
+                0,
+                1024,
+                256
+              ],
+              "bounds": [
+                44,
+                75,
+                210,
+                221
+              ],
+              "origin": [
+                128,
+                220
+              ],
+              "markers": {
+                "stable-center": [
+                  174.81225806451613,
+                  134.99032258064517
+                ]
+              },
+              "source": "everyday-walk-SE-3",
+              "sourceRect": [
+                0,
+                0,
+                258,
+                226
+              ]
+            }
+          ],
+          "sha256": "0c238a52c45c45a9bdc874d4821ab00aacac6c9555de251780f73980dd5f3603",
+          "bytes": 111146,
+          "loop": true,
+          "sequence": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "durations_ms": [
+            160,
+            160,
+            160,
+            160
+          ],
+          "events": [],
+          "root_motion": null,
+          "name": "向东南跑动",
+          "gait": {
+            "kind": "whole-frame-run-v8-soft",
+            "cycleMs": 640,
+            "projectedForward": [
+              0.707,
+              0.318
+            ],
+            "rootVelocityPxPerMs": [
+              0.03976875,
+              0.0178875
+            ],
+            "rootCycleDeltaPx": [
+              25.451999999999998,
+              11.448
+            ],
+            "worldFootLock": false,
+            "authoredPoses": 4
+          }
+        },
+        "walk-E": {
+          "atlas": "songtuan-soft-v8--everyday--walk-E.webp",
+          "atlasSize": [
+            1024,
+            256
+          ],
+          "grid": [
+            4,
+            1
+          ],
+          "cellSize": [
+            256,
+            256
+          ],
+          "frames": [
+            {
+              "rect": [
+                0,
+                0,
+                256,
+                256
+              ],
+              "bounds": [
+                38,
+                76,
+                208,
+                222
+              ],
+              "origin": [
+                128,
+                220
+              ],
+              "markers": {
+                "stable-center": [
+                  181.0883870967742,
+                  129.43225806451613
+                ]
+              },
+              "source": "everyday-walk-E-0",
+              "sourceRect": [
+                0,
+                0,
+                264,
+                229
+              ]
+            },
+            {
+              "rect": [
+                256,
+                0,
+                512,
+                256
+              ],
+              "bounds": [
+                45,
+                75,
+                211,
+                215
+              ],
+              "origin": [
+                128,
+                220
+              ],
+              "markers": {
+                "stable-center": [
+                  181.81870967741932,
+                  129.62451612903226
+                ]
+              },
+              "source": "everyday-walk-E-1",
+              "sourceRect": [
+                0,
+                0,
+                258,
+                217
+              ]
+            },
+            {
+              "rect": [
+                512,
+                0,
+                768,
+                256
+              ],
+              "bounds": [
+                42,
+                77,
+                209,
+                223
+              ],
+              "origin": [
+                128,
+                220
+              ],
+              "markers": {
+                "stable-center": [
+                  181.59290322580645,
+                  130.67870967741936
+                ]
+              },
+              "source": "everyday-walk-E-2",
+              "sourceRect": [
+                0,
+                0,
+                259,
+                227
+              ]
+            },
+            {
+              "rect": [
+                768,
+                0,
+                1024,
+                256
+              ],
+              "bounds": [
+                39,
+                77,
+                207,
+                225
+              ],
+              "origin": [
+                128,
+                220
+              ],
+              "markers": {
+                "stable-center": [
+                  181.2767741935484,
+                  131.7374193548387
+                ]
+              },
+              "source": "everyday-walk-E-3",
+              "sourceRect": [
+                0,
+                0,
+                261,
+                229
+              ]
+            }
+          ],
+          "sha256": "d7e1d71b04ba349d8bf5c473dd1284d824f431981c364126425e5c70d7e36521",
+          "bytes": 103630,
+          "loop": true,
+          "sequence": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "durations_ms": [
+            160,
+            160,
+            160,
+            160
+          ],
+          "events": [],
+          "root_motion": null,
+          "name": "向东跑动",
+          "gait": {
+            "kind": "whole-frame-run-v8-soft",
+            "cycleMs": 640,
+            "projectedForward": [
+              1,
+              0
+            ],
+            "rootVelocityPxPerMs": [
+              0.05625,
+              0.0
+            ],
+            "rootCycleDeltaPx": [
+              36,
+              0
+            ],
+            "worldFootLock": false,
+            "authoredPoses": 4
+          }
+        },
+        "walk-NE": {
+          "atlas": "songtuan-soft-v8--everyday--walk-NE.webp",
+          "atlasSize": [
+            1024,
+            256
+          ],
+          "grid": [
+            4,
+            1
+          ],
+          "cellSize": [
+            256,
+            256
+          ],
+          "frames": [
+            {
+              "rect": [
+                0,
+                0,
+                256,
+                256
+              ],
+              "bounds": [
+                31,
+                76,
+                197,
+                214
+              ],
+              "origin": [
+                128,
+                220
+              ],
+              "markers": {
+                "stable-center": [
+                  138.29166666666669,
+                  80.16666666666667
+                ]
+              },
+              "source": "everyday-walk-NE-0",
+              "sourceRect": [
+                0,
+                0,
+                398,
+                331
+              ]
+            },
+            {
+              "rect": [
+                256,
+                0,
+                512,
+                256
+              ],
+              "bounds": [
+                32,
+                79,
+                192,
+                216
+              ],
+              "origin": [
+                128,
+                220
+              ],
+              "markers": {
+                "stable-center": [
+                  137.625,
+                  81.5
+                ]
+              },
+              "source": "everyday-walk-NE-1",
+              "sourceRect": [
+                0,
+                0,
+                384,
+                328
+              ]
+            },
+            {
+              "rect": [
+                512,
+                0,
+                768,
+                256
+              ],
+              "bounds": [
+                36,
+                76,
+                199,
+                218
+              ],
+              "origin": [
+                128,
+                220
+              ],
+              "markers": {
+                "stable-center": [
+                  138.29166666666669,
+                  82.875
+                ]
+              },
+              "source": "everyday-walk-NE-2",
+              "sourceRect": [
+                0,
+                0,
+                391,
+                340
+              ]
+            },
+            {
+              "rect": [
+                768,
+                0,
+                1024,
+                256
+              ],
+              "bounds": [
+                36,
+                76,
+                194,
+                211
+              ],
+              "origin": [
+                128,
+                220
+              ],
+              "markers": {
+                "stable-center": [
+                  137.66666666666669,
+                  82.25
+                ]
+              },
+              "source": "everyday-walk-NE-3",
+              "sourceRect": [
+                0,
+                0,
+                378,
+                324
+              ]
+            }
+          ],
+          "sha256": "e56e3623211810593ad952ea3023cbca98249a36689f18292b7778ba3996976d",
+          "bytes": 96722,
+          "loop": true,
+          "sequence": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "durations_ms": [
+            160,
+            160,
+            160,
+            160
+          ],
+          "events": [],
+          "root_motion": null,
+          "name": "向东北跑动",
+          "gait": {
+            "kind": "whole-frame-run-v8-soft",
+            "cycleMs": 640,
+            "projectedForward": [
+              0.707,
+              -0.318
+            ],
+            "rootVelocityPxPerMs": [
+              0.03976875,
+              -0.0178875
+            ],
+            "rootCycleDeltaPx": [
+              25.451999999999998,
+              -11.448
+            ],
+            "worldFootLock": false,
+            "authoredPoses": 4
+          }
+        },
+        "walk-N": {
+          "atlas": "songtuan-soft-v8--everyday--walk-N.webp",
+          "atlasSize": [
+            1024,
+            256
+          ],
+          "grid": [
+            4,
+            1
+          ],
+          "cellSize": [
+            256,
+            256
+          ],
+          "frames": [
+            {
+              "rect": [
+                0,
+                0,
+                256,
+                256
+              ],
+              "bounds": [
+                58,
+                62,
+                184,
+                222
+              ],
+              "origin": [
+                128,
+                220
+              ],
+              "markers": {
+                "stable-center": [
+                  127.9741935483871,
+                  66.19354838709677
+                ]
+              },
+              "source": "everyday-walk-N-0",
+              "sourceRect": [
+                0,
+                0,
+                195,
+                248
+              ]
+            },
+            {
+              "rect": [
+                256,
+                0,
+                512,
+                256
+              ],
+              "bounds": [
+                57,
+                60,
+                185,
+                221
+              ],
+              "origin": [
+                128,
+                220
+              ],
+              "markers": {
+                "stable-center": [
+                  128.4864516129032,
+                  65.80645161290323
+                ]
+              },
+              "source": "everyday-walk-N-1",
+              "sourceRect": [
+                0,
+                0,
+                199,
+                250
+              ]
+            },
+            {
+              "rect": [
+                512,
+                0,
+                768,
+                256
+              ],
+              "bounds": [
+                57,
+                61,
+                185,
+                223
+              ],
+              "origin": [
+                128,
+                220
+              ],
+              "markers": {
+                "stable-center": [
+                  127.99677419354836,
+                  66.16129032258064
+                ]
+              },
+              "source": "everyday-walk-N-2",
+              "sourceRect": [
+                0,
+                0,
+                198,
+                251
+              ]
+            },
+            {
+              "rect": [
+                768,
+                0,
+                1024,
+                256
+              ],
+              "bounds": [
+                56,
+                62,
+                182,
+                225
+              ],
+              "origin": [
+                128,
+                220
+              ],
+              "markers": {
+                "stable-center": [
+                  127.57419354838713,
+                  67.80645161290323
+                ]
+              },
+              "source": "everyday-walk-N-3",
+              "sourceRect": [
+                0,
+                0,
+                196,
+                252
+              ]
+            }
+          ],
+          "sha256": "317bc86bb6713904aee2a066c9354852f644c0da149e7e3c09e7f138c23b467a",
+          "bytes": 103824,
+          "loop": true,
+          "sequence": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "durations_ms": [
+            160,
+            160,
+            160,
+            160
+          ],
+          "events": [],
+          "root_motion": null,
+          "name": "向北跑动",
+          "gait": {
+            "kind": "whole-frame-run-v8-soft",
+            "cycleMs": 640,
+            "projectedForward": [
+              0,
+              -0.45
+            ],
+            "rootVelocityPxPerMs": [
+              0.0,
+              -0.025312499999999998
+            ],
+            "rootCycleDeltaPx": [
+              0,
+              -16.2
+            ],
+            "worldFootLock": false,
+            "authoredPoses": 4
+          }
+        },
+        "walk-SW": {
+          "atlas": "songtuan-soft-v8--everyday--walk-SW.webp",
+          "atlasSize": [
+            1024,
+            256
+          ],
+          "grid": [
+            4,
+            1
+          ],
+          "cellSize": [
+            256,
+            256
+          ],
+          "frames": [
+            {
+              "rect": [
+                0,
+                0,
+                256,
+                256
+              ],
+              "bounds": [
+                45,
+                68,
+                213,
+                216
+              ],
+              "origin": [
+                128,
+                220
+              ],
+              "markers": {
+                "stable-center": [
+                  81.73548387096774,
+                  129.59161290322578
+                ]
+              },
+              "source": "everyday-walk-SW-0",
+              "sourceRect": [
+                0,
+                0,
+                260,
+                229
+              ]
+            },
+            {
+              "rect": [
+                256,
+                0,
+                512,
+                256
+              ],
+              "bounds": [
+                45,
+                71,
+                210,
+                219
+              ],
+              "origin": [
+                128,
+                220
+              ],
+              "markers": {
+                "stable-center": [
+                  81.77935483870966,
+                  130.84451612903226
+                ]
+              },
+              "source": "everyday-walk-SW-1",
+              "sourceRect": [
+                0,
+                0,
+                256,
+                229
+              ]
+            },
+            {
+              "rect": [
+                512,
+                0,
+                768,
+                256
+              ],
+              "bounds": [
+                46,
+                73,
+                213,
+                223
+              ],
+              "origin": [
+                128,
+                220
+              ],
+              "markers": {
+                "stable-center": [
+                  80.87225806451613,
+                  133.1483870967742
+                ]
+              },
+              "source": "everyday-walk-SW-2",
+              "sourceRect": [
+                0,
+                0,
+                259,
+                232
+              ]
+            },
+            {
+              "rect": [
+                768,
+                0,
+                1024,
+                256
+              ],
+              "bounds": [
+                46,
+                75,
+                212,
+                221
+              ],
+              "origin": [
+                128,
+                220
+              ],
+              "markers": {
+                "stable-center": [
+                  81.63935483870966,
+                  134.99032258064517
+                ]
+              },
+              "source": "everyday-walk-SW-3",
+              "sourceRect": [
+                0,
+                0,
+                258,
+                226
+              ]
+            }
+          ],
+          "sha256": "f18897cef69024b80d6b938de44057210bad1bc60af246a6dde79d9eeb768f71",
+          "bytes": 111398,
+          "loop": true,
+          "sequence": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "durations_ms": [
+            160,
+            160,
+            160,
+            160
+          ],
+          "events": [],
+          "root_motion": null,
+          "name": "向西南跑动",
+          "gait": {
+            "kind": "whole-frame-run-v8-soft",
+            "cycleMs": 640,
+            "projectedForward": [
+              -0.707,
+              0.318
+            ],
+            "rootVelocityPxPerMs": [
+              -0.03976875,
+              0.0178875
+            ],
+            "rootCycleDeltaPx": [
+              -25.451999999999998,
+              11.448
+            ],
+            "worldFootLock": false,
+            "authoredPoses": 4,
+            "mirroredFrom": "SE"
+          }
+        },
+        "walk-W": {
+          "atlas": "songtuan-soft-v8--everyday--walk-W.webp",
+          "atlasSize": [
+            1024,
+            256
+          ],
+          "grid": [
+            4,
+            1
+          ],
+          "cellSize": [
+            256,
+            256
+          ],
+          "frames": [
+            {
+              "rect": [
+                0,
+                0,
+                256,
+                256
+              ],
+              "bounds": [
+                47,
+                76,
+                217,
+                222
+              ],
+              "origin": [
+                128,
+                220
+              ],
+              "markers": {
+                "stable-center": [
+                  74.2341935483871,
+                  129.43225806451613
+                ]
+              },
+              "source": "everyday-walk-W-0",
+              "sourceRect": [
+                0,
+                0,
+                264,
+                229
+              ]
+            },
+            {
+              "rect": [
+                256,
+                0,
+                512,
+                256
+              ],
+              "bounds": [
+                45,
+                75,
+                211,
+                215
+              ],
+              "origin": [
+                128,
+                220
+              ],
+              "markers": {
+                "stable-center": [
+                  74.63290322580647,
+                  129.62451612903226
+                ]
+              },
+              "source": "everyday-walk-W-1",
+              "sourceRect": [
+                0,
+                0,
+                258,
+                217
+              ]
+            },
+            {
+              "rect": [
+                512,
+                0,
+                768,
+                256
+              ],
+              "bounds": [
+                47,
+                77,
+                214,
+                223
+              ],
+              "origin": [
+                128,
+                220
+              ],
+              "markers": {
+                "stable-center": [
+                  74.50387096774192,
+                  130.67870967741936
+                ]
+              },
+              "source": "everyday-walk-W-2",
+              "sourceRect": [
+                0,
+                0,
+                259,
+                227
+              ]
+            },
+            {
+              "rect": [
+                768,
+                0,
+                1024,
+                256
+              ],
+              "bounds": [
+                49,
+                77,
+                217,
+                225
+              ],
+              "origin": [
+                128,
+                220
+              ],
+              "markers": {
+                "stable-center": [
+                  75.11032258064516,
+                  131.7374193548387
+                ]
+              },
+              "source": "everyday-walk-W-3",
+              "sourceRect": [
+                0,
+                0,
+                261,
+                229
+              ]
+            }
+          ],
+          "sha256": "a619334cf37d1f4acbad19e0aba510323ce0162c7e26676ba620623589cefb12",
+          "bytes": 103344,
+          "loop": true,
+          "sequence": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "durations_ms": [
+            160,
+            160,
+            160,
+            160
+          ],
+          "events": [],
+          "root_motion": null,
+          "name": "向西跑动",
+          "gait": {
+            "kind": "whole-frame-run-v8-soft",
+            "cycleMs": 640,
+            "projectedForward": [
+              -1,
+              0
+            ],
+            "rootVelocityPxPerMs": [
+              -0.05625,
+              0.0
+            ],
+            "rootCycleDeltaPx": [
+              -36,
+              0
+            ],
+            "worldFootLock": false,
+            "authoredPoses": 4,
+            "mirroredFrom": "E"
+          }
+        },
+        "walk-NW": {
+          "atlas": "songtuan-soft-v8--everyday--walk-NW.webp",
+          "atlasSize": [
+            1024,
+            256
+          ],
+          "grid": [
+            4,
+            1
+          ],
+          "cellSize": [
+            256,
+            256
+          ],
+          "frames": [
+            {
+              "rect": [
+                0,
+                0,
+                256,
+                256
+              ],
+              "bounds": [
+                60,
+                76,
+                226,
+                214
+              ],
+              "origin": [
+                128,
+                220
+              ],
+              "markers": {
+                "stable-center": [
+                  118.54166666666667,
+                  80.16666666666667
+                ]
+              },
+              "source": "everyday-walk-NW-0",
+              "sourceRect": [
+                0,
+                0,
+                398,
+                331
+              ]
+            },
+            {
+              "rect": [
+                256,
+                0,
+                512,
+                256
+              ],
+              "bounds": [
+                64,
+                79,
+                224,
+                216
+              ],
+              "origin": [
+                128,
+                220
+              ],
+              "markers": {
+                "stable-center": [
+                  118.375,
+                  81.5
+                ]
+              },
+              "source": "everyday-walk-NW-1",
+              "sourceRect": [
+                0,
+                0,
+                384,
+                328
+              ]
+            },
+            {
+              "rect": [
+                512,
+                0,
+                768,
+                256
+              ],
+              "bounds": [
+                58,
+                76,
+                221,
+                218
+              ],
+              "origin": [
+                128,
+                220
+              ],
+              "markers": {
+                "stable-center": [
+                  118.625,
+                  82.875
+                ]
+              },
+              "source": "everyday-walk-NW-2",
+              "sourceRect": [
+                0,
+                0,
+                391,
+                340
+              ]
+            },
+            {
+              "rect": [
+                768,
+                0,
+                1024,
+                256
+              ],
+              "bounds": [
+                62,
+                76,
+                220,
+                211
+              ],
+              "origin": [
+                128,
+                220
+              ],
+              "markers": {
+                "stable-center": [
+                  117.83333333333334,
+                  82.25
+                ]
+              },
+              "source": "everyday-walk-NW-3",
+              "sourceRect": [
+                0,
+                0,
+                378,
+                324
+              ]
+            }
+          ],
+          "sha256": "f853191878335230c0e64ca9c5339fa3c05584f31b96c9b01da1a93a51a708df",
+          "bytes": 96432,
+          "loop": true,
+          "sequence": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "durations_ms": [
+            160,
+            160,
+            160,
+            160
+          ],
+          "events": [],
+          "root_motion": null,
+          "name": "向西北跑动",
+          "gait": {
+            "kind": "whole-frame-run-v8-soft",
+            "cycleMs": 640,
+            "projectedForward": [
+              -0.707,
+              -0.318
+            ],
+            "rootVelocityPxPerMs": [
+              -0.03976875,
+              -0.0178875
+            ],
+            "rootCycleDeltaPx": [
+              -25.451999999999998,
+              -11.448
+            ],
+            "worldFootLock": false,
+            "authoredPoses": 4,
+            "mirroredFrom": "NE"
+          }
+        },
+        "jump": {
+          "atlas": "songtuan-soft-v8--everyday--jump.webp",
+          "atlasSize": [
+            1024,
+            512
+          ],
+          "grid": [
+            4,
+            2
+          ],
+          "cellSize": [
+            256,
+            256
+          ],
+          "frames": [
+            {
+              "rect": [
+                0,
+                0,
+                256,
+                256
+              ],
+              "bounds": [
+                37,
+                63,
+                200,
+                222
+              ],
+              "origin": [
+                128,
+                220
+              ],
+              "markers": {
+                "stable-center": [
+                  162.96666666666664,
+                  116.21496598639456
+                ]
+              },
+              "source": "everyday-jump-0",
+              "sourceRect": [
+                0,
+                0,
+                239,
+                233
+              ]
+            },
+            {
+              "rect": [
+                256,
+                0,
+                512,
+                256
+              ],
+              "bounds": [
+                26,
+                88,
+                199,
+                229
+              ],
+              "origin": [
+                128,
+                220
+              ],
+              "markers": {
+                "stable-center": [
+                  162.58231292517004,
+                  141.8231292517007
+                ]
+              },
+              "source": "everyday-jump-1",
+              "sourceRect": [
+                0,
+                0,
+                256,
+                207
+              ]
+            },
+            {
+              "rect": [
+                512,
+                0,
+                768,
+                256
+              ],
+              "bounds": [
+                29,
+                46,
+                200,
+                217
+              ],
+              "origin": [
+                128,
+                220
+              ],
+              "markers": {
+                "stable-center": [
+                  163.1068027210884,
+                  101.5326530612245
+                ]
+              },
+              "source": "everyday-jump-2",
+              "sourceRect": [
+                0,
+                0,
+                252,
+                251
+              ]
+            },
+            {
+              "rect": [
+                768,
+                0,
+                1024,
+                256
+              ],
+              "bounds": [
+                30,
+                33,
+                207,
+                198
+              ],
+              "origin": [
+                128,
+                220
+              ],
+              "markers": {
+                "stable-center": [
+                  162.8931972789116,
+                  86.20408163265306
+                ]
+              },
+              "source": "everyday-jump-3",
+              "sourceRect": [
+                0,
+                0,
+                260,
+                242
+              ]
+            },
+            {
+              "rect": [
+                0,
+                256,
+                256,
+                512
+              ],
+              "bounds": [
+                33,
+                35,
+                208,
+                194
+              ],
+              "origin": [
+                128,
+                220
+              ],
+              "markers": {
+                "stable-center": [
+                  162.6768707482993,
+                  86.61768707482992
+                ]
+              },
+              "source": "everyday-jump-4",
+              "sourceRect": [
+                0,
+                0,
+                257,
+                233
+              ]
+            },
+            {
+              "rect": [
+                256,
+                256,
+                512,
+                512
+              ],
+              "bounds": [
+                21,
+                50,
+                199,
+                206
+              ],
+              "origin": [
+                128,
+                220
+              ],
+              "markers": {
+                "stable-center": [
+                  162.5360544217687,
+                  103.89047619047619
+                ]
+              },
+              "source": "everyday-jump-5",
+              "sourceRect": [
+                0,
+                0,
+                261,
+                229
+              ]
+            },
+            {
+              "rect": [
+                512,
+                256,
+                768,
+                512
+              ],
+              "bounds": [
+                25,
+                82,
+                200,
+                223
+              ],
+              "origin": [
+                128,
+                220
+              ],
+              "markers": {
+                "stable-center": [
+                  162.58503401360545,
+                  140.1408163265306
+                ]
+              },
+              "source": "everyday-jump-6",
+              "sourceRect": [
+                0,
+                0,
+                257,
+                208
+              ]
+            },
+            {
+              "rect": [
+                768,
+                256,
+                1024,
+                512
+              ],
+              "bounds": [
+                30,
+                62,
+                200,
+                222
+              ],
+              "origin": [
+                128,
+                220
+              ],
+              "markers": {
+                "stable-center": [
+                  162.53877551020415,
+                  115.97619047619048
+                ]
+              },
+              "source": "everyday-jump-7",
+              "sourceRect": [
+                0,
+                0,
+                250,
+                237
+              ]
+            }
+          ],
+          "sha256": "69a36eb016a84fa6cd17b330e362b5618880ade977b7856c57edbfdc29366ab8",
+          "bytes": 253178,
+          "loop": false,
+          "sequence": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "durations_ms": [
+            100,
+            110,
+            90,
+            110,
+            140,
+            110,
+            120,
+            180
+          ],
+          "events": [
+            {
+              "step": 2,
+              "name": "takeoff",
+              "payload": {
+                "previewOnly": true
+              }
+            },
+            {
+              "step": 6,
+              "name": "landing",
+              "payload": {
+                "previewOnly": true
+              }
+            }
+          ],
+          "root_motion": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "name": "轻巧蹦跳"
+        }
+      },
+      "name": "日常短褂"
+    }
+  }
+}

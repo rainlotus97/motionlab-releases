@@ -1,0 +1,614 @@
+{
+  "version": 1,
+  "scope": "骨骼动作与身体比例研究；不含角色新绘制、蒙皮或正式游戏接入",
+  "sources": {
+    "ual1": {
+      "name": "Quaternius Universal Animation Library [Standard]",
+      "license": "CC0",
+      "url": "https://quaternius.com/packs/universalanimationlibrary.html"
+    }
+  },
+  "profiles": {
+    "long": {
+      "name": "长腿双足 · 来源比例",
+      "family": "biped",
+      "translationFactors": [],
+      "headRadius": 6
+    },
+    "short": {
+      "name": "短腿双足 · 适配草案",
+      "family": "biped",
+      "translationFactors": [
+        {
+          "prefixes": [
+            "root",
+            "pelvis"
+          ],
+          "factor": 0.45
+        },
+        {
+          "prefixes": [
+            "calf_",
+            "foot_",
+            "ball_"
+          ],
+          "factor": 0.45
+        },
+        {
+          "prefixes": [
+            "thigh_"
+          ],
+          "factor": 1.1
+        },
+        {
+          "prefixes": [
+            "spine_"
+          ],
+          "factor": 0.95
+        },
+        {
+          "prefixes": [
+            "clavicle_"
+          ],
+          "factor": 1.1
+        },
+        {
+          "prefixes": [
+            "upperarm_",
+            "lowerarm_",
+            "hand_",
+            "index_",
+            "middle_",
+            "pinky_",
+            "ring_",
+            "thumb_"
+          ],
+          "factor": 0.6
+        },
+        {
+          "prefixes": [
+            "neck"
+          ],
+          "factor": 0.65
+        }
+      ],
+      "headRadius": 11,
+      "status": "保留源旋转与动作时序；脚底IK和道具约束未完成"
+    },
+    "round": {
+      "name": "圆身双足 · 极短腿草案",
+      "family": "biped",
+      "translationFactors": [
+        {
+          "prefixes": [
+            "root",
+            "pelvis"
+          ],
+          "factor": 0.25
+        },
+        {
+          "prefixes": [
+            "calf_",
+            "foot_",
+            "ball_"
+          ],
+          "factor": 0.25
+        },
+        {
+          "prefixes": [
+            "thigh_"
+          ],
+          "factor": 1.1
+        },
+        {
+          "prefixes": [
+            "spine_"
+          ],
+          "factor": 0.7
+        },
+        {
+          "prefixes": [
+            "clavicle_"
+          ],
+          "factor": 1.1
+        },
+        {
+          "prefixes": [
+            "upperarm_",
+            "lowerarm_",
+            "hand_",
+            "index_",
+            "middle_",
+            "pinky_",
+            "ring_",
+            "thumb_"
+          ],
+          "factor": 0.35
+        },
+        {
+          "prefixes": [
+            "neck"
+          ],
+          "factor": 0.5
+        }
+      ],
+      "headRadius": 15,
+      "status": "保留源旋转与动作时序；脚底IK和道具约束未完成"
+    }
+  },
+  "clips": [
+    {
+      "id": "ual1-a-tpose",
+      "name": "标准 T 姿态",
+      "sourceClip": "A_TPose",
+      "pack": "ual1",
+      "family": "biped",
+      "group": "待机与其他",
+      "loop": false,
+      "duration": 2.5,
+      "file": "clips/ual1-a-tpose.json"
+    },
+    {
+      "id": "ual1-crouch-fwd-loop",
+      "name": "蹲伏前行",
+      "sourceClip": "Crouch_Fwd_Loop",
+      "pack": "ual1",
+      "family": "biped",
+      "group": "移动",
+      "loop": true,
+      "duration": 2.0,
+      "file": "clips/ual1-crouch-fwd-loop.json"
+    },
+    {
+      "id": "ual1-crouch-idle-loop",
+      "name": "蹲伏待机",
+      "sourceClip": "Crouch_Idle_Loop",
+      "pack": "ual1",
+      "family": "biped",
+      "group": "移动",
+      "loop": true,
+      "duration": 2.933333,
+      "file": "clips/ual1-crouch-idle-loop.json"
+    },
+    {
+      "id": "ual1-dance-loop",
+      "name": "Dance Loop",
+      "sourceClip": "Dance_Loop",
+      "pack": "ual1",
+      "family": "biped",
+      "group": "待机与其他",
+      "loop": true,
+      "duration": 1.0,
+      "file": "clips/ual1-dance-loop.json"
+    },
+    {
+      "id": "ual1-death01",
+      "name": "倒地",
+      "sourceClip": "Death01",
+      "pack": "ual1",
+      "family": "biped",
+      "group": "受击与防御",
+      "loop": false,
+      "duration": 2.4,
+      "file": "clips/ual1-death01.json"
+    },
+    {
+      "id": "ual1-driving-loop",
+      "name": "Driving Loop",
+      "sourceClip": "Driving_Loop",
+      "pack": "ual1",
+      "family": "biped",
+      "group": "待机与其他",
+      "loop": true,
+      "duration": 1.666667,
+      "file": "clips/ual1-driving-loop.json"
+    },
+    {
+      "id": "ual1-fixing-kneeling",
+      "name": "跪地作业姿态",
+      "sourceClip": "Fixing_Kneeling",
+      "pack": "ual1",
+      "family": "biped",
+      "group": "待机与其他",
+      "loop": false,
+      "duration": 5.2,
+      "file": "clips/ual1-fixing-kneeling.json"
+    },
+    {
+      "id": "ual1-hit-chest",
+      "name": "胸部受击",
+      "sourceClip": "Hit_Chest",
+      "pack": "ual1",
+      "family": "biped",
+      "group": "受击与防御",
+      "loop": false,
+      "duration": 0.333333,
+      "file": "clips/ual1-hit-chest.json"
+    },
+    {
+      "id": "ual1-hit-head",
+      "name": "头部受击",
+      "sourceClip": "Hit_Head",
+      "pack": "ual1",
+      "family": "biped",
+      "group": "受击与防御",
+      "loop": false,
+      "duration": 0.433333,
+      "file": "clips/ual1-hit-head.json"
+    },
+    {
+      "id": "ual1-idle-loop",
+      "name": "站立待机",
+      "sourceClip": "Idle_Loop",
+      "pack": "ual1",
+      "family": "biped",
+      "group": "待机与其他",
+      "loop": true,
+      "duration": 2.5,
+      "file": "clips/ual1-idle-loop.json"
+    },
+    {
+      "id": "ual1-idle-talking-loop",
+      "name": "Idle Talking Loop",
+      "sourceClip": "Idle_Talking_Loop",
+      "pack": "ual1",
+      "family": "biped",
+      "group": "待机与其他",
+      "loop": true,
+      "duration": 2.933333,
+      "file": "clips/ual1-idle-talking-loop.json"
+    },
+    {
+      "id": "ual1-idle-torch-loop",
+      "name": "Idle Torch Loop",
+      "sourceClip": "Idle_Torch_Loop",
+      "pack": "ual1",
+      "family": "biped",
+      "group": "待机与其他",
+      "loop": true,
+      "duration": 1.266667,
+      "file": "clips/ual1-idle-torch-loop.json"
+    },
+    {
+      "id": "ual1-interact",
+      "name": "Interact",
+      "sourceClip": "Interact",
+      "pack": "ual1",
+      "family": "biped",
+      "group": "待机与其他",
+      "loop": false,
+      "duration": 2.0,
+      "file": "clips/ual1-interact.json"
+    },
+    {
+      "id": "ual1-jog-fwd-loop",
+      "name": "慢跑",
+      "sourceClip": "Jog_Fwd_Loop",
+      "pack": "ual1",
+      "family": "biped",
+      "group": "移动",
+      "loop": true,
+      "duration": 0.933333,
+      "file": "clips/ual1-jog-fwd-loop.json"
+    },
+    {
+      "id": "ual1-jump-land",
+      "name": "普通跳跃 · 落地",
+      "sourceClip": "Jump_Land",
+      "pack": "ual1",
+      "family": "biped",
+      "group": "跳跃",
+      "loop": false,
+      "duration": 1.266667,
+      "file": "clips/ual1-jump-land.json"
+    },
+    {
+      "id": "ual1-jump-loop",
+      "name": "普通跳跃 · 空中姿态",
+      "sourceClip": "Jump_Loop",
+      "pack": "ual1",
+      "family": "biped",
+      "group": "跳跃",
+      "loop": true,
+      "duration": 2.5,
+      "file": "clips/ual1-jump-loop.json"
+    },
+    {
+      "id": "ual1-jump-start",
+      "name": "普通跳跃 · 起跳",
+      "sourceClip": "Jump_Start",
+      "pack": "ual1",
+      "family": "biped",
+      "group": "跳跃",
+      "loop": false,
+      "duration": 1.333333,
+      "file": "clips/ual1-jump-start.json"
+    },
+    {
+      "id": "ual1-pickup-table",
+      "name": "PickUp Table",
+      "sourceClip": "PickUp_Table",
+      "pack": "ual1",
+      "family": "biped",
+      "group": "待机与其他",
+      "loop": false,
+      "duration": 0.833333,
+      "file": "clips/ual1-pickup-table.json"
+    },
+    {
+      "id": "ual1-pistol-aim-down",
+      "name": "Pistol Aim Down",
+      "sourceClip": "Pistol_Aim_Down",
+      "pack": "ual1",
+      "family": "biped",
+      "group": "待机与其他",
+      "loop": false,
+      "duration": 0.166667,
+      "file": "clips/ual1-pistol-aim-down.json"
+    },
+    {
+      "id": "ual1-pistol-aim-neutral",
+      "name": "Pistol Aim Neutral",
+      "sourceClip": "Pistol_Aim_Neutral",
+      "pack": "ual1",
+      "family": "biped",
+      "group": "待机与其他",
+      "loop": false,
+      "duration": 0.166667,
+      "file": "clips/ual1-pistol-aim-neutral.json"
+    },
+    {
+      "id": "ual1-pistol-aim-up",
+      "name": "Pistol Aim Up",
+      "sourceClip": "Pistol_Aim_Up",
+      "pack": "ual1",
+      "family": "biped",
+      "group": "待机与其他",
+      "loop": false,
+      "duration": 0.166667,
+      "file": "clips/ual1-pistol-aim-up.json"
+    },
+    {
+      "id": "ual1-pistol-idle-loop",
+      "name": "Pistol Idle Loop",
+      "sourceClip": "Pistol_Idle_Loop",
+      "pack": "ual1",
+      "family": "biped",
+      "group": "待机与其他",
+      "loop": true,
+      "duration": 1.666667,
+      "file": "clips/ual1-pistol-idle-loop.json"
+    },
+    {
+      "id": "ual1-pistol-reload",
+      "name": "Pistol Reload",
+      "sourceClip": "Pistol_Reload",
+      "pack": "ual1",
+      "family": "biped",
+      "group": "待机与其他",
+      "loop": false,
+      "duration": 1.666667,
+      "file": "clips/ual1-pistol-reload.json"
+    },
+    {
+      "id": "ual1-pistol-shoot",
+      "name": "Pistol Shoot",
+      "sourceClip": "Pistol_Shoot",
+      "pack": "ual1",
+      "family": "biped",
+      "group": "待机与其他",
+      "loop": false,
+      "duration": 0.633333,
+      "file": "clips/ual1-pistol-shoot.json"
+    },
+    {
+      "id": "ual1-punch-cross",
+      "name": "后手直拳",
+      "sourceClip": "Punch_Cross",
+      "pack": "ual1",
+      "family": "biped",
+      "group": "攻击",
+      "loop": false,
+      "duration": 1.0,
+      "file": "clips/ual1-punch-cross.json"
+    },
+    {
+      "id": "ual1-punch-jab",
+      "name": "前手刺拳",
+      "sourceClip": "Punch_Jab",
+      "pack": "ual1",
+      "family": "biped",
+      "group": "攻击",
+      "loop": false,
+      "duration": 0.866667,
+      "file": "clips/ual1-punch-jab.json"
+    },
+    {
+      "id": "ual1-push-loop",
+      "name": "Push Loop",
+      "sourceClip": "Push_Loop",
+      "pack": "ual1",
+      "family": "biped",
+      "group": "待机与其他",
+      "loop": true,
+      "duration": 2.666667,
+      "file": "clips/ual1-push-loop.json"
+    },
+    {
+      "id": "ual1-roll",
+      "name": "翻滚闪避",
+      "sourceClip": "Roll",
+      "pack": "ual1",
+      "family": "biped",
+      "group": "受击与防御",
+      "loop": false,
+      "duration": 1.466667,
+      "file": "clips/ual1-roll.json"
+    },
+    {
+      "id": "ual1-sitting-enter",
+      "name": "Sitting Enter",
+      "sourceClip": "Sitting_Enter",
+      "pack": "ual1",
+      "family": "biped",
+      "group": "待机与其他",
+      "loop": false,
+      "duration": 1.3,
+      "file": "clips/ual1-sitting-enter.json"
+    },
+    {
+      "id": "ual1-sitting-exit",
+      "name": "Sitting Exit",
+      "sourceClip": "Sitting_Exit",
+      "pack": "ual1",
+      "family": "biped",
+      "group": "待机与其他",
+      "loop": false,
+      "duration": 1.033333,
+      "file": "clips/ual1-sitting-exit.json"
+    },
+    {
+      "id": "ual1-sitting-idle-loop",
+      "name": "Sitting Idle Loop",
+      "sourceClip": "Sitting_Idle_Loop",
+      "pack": "ual1",
+      "family": "biped",
+      "group": "待机与其他",
+      "loop": true,
+      "duration": 1.666667,
+      "file": "clips/ual1-sitting-idle-loop.json"
+    },
+    {
+      "id": "ual1-sitting-talking-loop",
+      "name": "Sitting Talking Loop",
+      "sourceClip": "Sitting_Talking_Loop",
+      "pack": "ual1",
+      "family": "biped",
+      "group": "待机与其他",
+      "loop": true,
+      "duration": 2.933333,
+      "file": "clips/ual1-sitting-talking-loop.json"
+    },
+    {
+      "id": "ual1-spell-simple-enter",
+      "name": "施法 · 起势",
+      "sourceClip": "Spell_Simple_Enter",
+      "pack": "ual1",
+      "family": "biped",
+      "group": "施法",
+      "loop": false,
+      "duration": 0.533333,
+      "file": "clips/ual1-spell-simple-enter.json"
+    },
+    {
+      "id": "ual1-spell-simple-exit",
+      "name": "施法 · 收势",
+      "sourceClip": "Spell_Simple_Exit",
+      "pack": "ual1",
+      "family": "biped",
+      "group": "施法",
+      "loop": false,
+      "duration": 0.433333,
+      "file": "clips/ual1-spell-simple-exit.json"
+    },
+    {
+      "id": "ual1-spell-simple-idle-loop",
+      "name": "施法 · 蓄势",
+      "sourceClip": "Spell_Simple_Idle_Loop",
+      "pack": "ual1",
+      "family": "biped",
+      "group": "施法",
+      "loop": true,
+      "duration": 2.1,
+      "file": "clips/ual1-spell-simple-idle-loop.json"
+    },
+    {
+      "id": "ual1-spell-simple-shoot",
+      "name": "施法 · 释放",
+      "sourceClip": "Spell_Simple_Shoot",
+      "pack": "ual1",
+      "family": "biped",
+      "group": "施法",
+      "loop": false,
+      "duration": 0.5,
+      "file": "clips/ual1-spell-simple-shoot.json"
+    },
+    {
+      "id": "ual1-sprint-loop",
+      "name": "冲刺奔跑",
+      "sourceClip": "Sprint_Loop",
+      "pack": "ual1",
+      "family": "biped",
+      "group": "移动",
+      "loop": true,
+      "duration": 0.666667,
+      "file": "clips/ual1-sprint-loop.json"
+    },
+    {
+      "id": "ual1-swim-fwd-loop",
+      "name": "Swim Fwd Loop",
+      "sourceClip": "Swim_Fwd_Loop",
+      "pack": "ual1",
+      "family": "biped",
+      "group": "待机与其他",
+      "loop": true,
+      "duration": 1.333333,
+      "file": "clips/ual1-swim-fwd-loop.json"
+    },
+    {
+      "id": "ual1-swim-idle-loop",
+      "name": "Swim Idle Loop",
+      "sourceClip": "Swim_Idle_Loop",
+      "pack": "ual1",
+      "family": "biped",
+      "group": "待机与其他",
+      "loop": true,
+      "duration": 3.333333,
+      "file": "clips/ual1-swim-idle-loop.json"
+    },
+    {
+      "id": "ual1-sword-attack",
+      "name": "单次挥剑",
+      "sourceClip": "Sword_Attack",
+      "pack": "ual1",
+      "family": "biped",
+      "group": "攻击",
+      "loop": false,
+      "duration": 1.533333,
+      "file": "clips/ual1-sword-attack.json"
+    },
+    {
+      "id": "ual1-sword-idle",
+      "name": "持剑备战",
+      "sourceClip": "Sword_Idle",
+      "pack": "ual1",
+      "family": "biped",
+      "group": "攻击",
+      "loop": true,
+      "duration": 1.666667,
+      "file": "clips/ual1-sword-idle.json"
+    },
+    {
+      "id": "ual1-walk-formal-loop",
+      "name": "端正行走",
+      "sourceClip": "Walk_Formal_Loop",
+      "pack": "ual1",
+      "family": "biped",
+      "group": "移动",
+      "loop": true,
+      "duration": 1.333333,
+      "file": "clips/ual1-walk-formal-loop.json"
+    },
+    {
+      "id": "ual1-walk-loop",
+      "name": "普通行走",
+      "sourceClip": "Walk_Loop",
+      "pack": "ual1",
+      "family": "biped",
+      "group": "移动",
+      "loop": true,
+      "duration": 1.333333,
+      "file": "clips/ual1-walk-loop.json"
+    }
+  ]
+}

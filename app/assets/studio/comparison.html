@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>骨骼与人物逐帧对照</title>
+<link rel="icon" href="data:,"><link rel="stylesheet" href="comparison.css">
+<link rel="stylesheet" href="tool-theme.css">
+<header><div><span class="eyebrow">CHARACTER MOTION / COMPARISON</span><h1>骨骼与人物逐帧对照</h1><p>固定目标方案，逐格检查人物姿态与运动衔接。</p></div><nav><a href="/">人物工作台</a><a href="sampling.html">骨骼选帧</a></nav></header>
+<div id="error" class="notice error" role="alert" hidden></div><div id="notice" class="notice" role="status" aria-live="polite"></div>
+<div class="comparison-bar"><label>对比版本<select id="comparison"></select></label><span id="relationship" class="badge"></span><button id="refresh">刷新素材与记录</button><span id="dirty-count" class="hint"></span></div>
+<p id="reference-intent" class="hint">参考精度按本次角色目标验收。</p>
+<main>
+<section class="viewer-area">
+<div class="stages"><article class="stage-card"><div class="stage-heading"><h2>骨骼参考 · 方案快照</h2><span class="badge">参考姿态</span></div><canvas id="target" width="480" height="560" aria-label="当前格骨骼参考"></canvas><p id="target-readout" class="readout"></p></article><article class="stage-card"><div class="stage-heading"><h2>对应人物帧</h2><span id="art-status" class="badge">人工审阅</span></div><canvas id="art" width="480" height="560" aria-label="人物帧及可选目标骨架叠加"></canvas><p id="art-readout" class="readout"></p></article></div>
+<div class="toolbar playback"><button id="play">播放</button><button id="previous">上一格</button><button id="next">下一格</button><button id="restart">从头播放</button><label>速度<select id="speed"><option value="0.25">¼速</option><option value="0.5">半速</option><option value="1" selected>正常</option><option value="2">2倍</option></select></label><button id="review-wrap">单次末→首审查</button></div>
+<div class="display-controls"><label><input id="overlay" type="checkbox" checked>人物叠加目标骨架</label><label>骨架透明度<input id="opacity" type="range" min="0.1" max="1" step="0.05" value="0.6"></label><label><input id="guides" type="checkbox" checked>共用中轴／脚线</label><label><input id="ghost" type="checkbox">上一格影像</label><label><input id="labels" type="checkbox">骨架关节名</label><label><input id="markers" type="checkbox">人物人工配准点</label><label>背景<select id="background"><option value="light">浅纸</option><option value="checker">透明棋盘</option><option value="dark">深底</option></select></label></div>
+<p id="alignment" class="hint"></p><input id="seek" type="range" min="0" max="7" step="1" value="0" aria-label="切换对比格"><p id="playback-info" class="hint"></p>
+<section class="timeline-panel"><div class="section-heading"><h2>全部对比格</h2><span id="count" class="badge"></span></div><div id="frames" class="frames" aria-label="全部骨架与人物缩略对照"></div></section>
+<p class="hint disclaimer">彩色骨架来自冻结的目标方案；它没有识别人物图中的隐藏肢体。共用坐标是人工显示配准，不能证明关节、裙摆或脚步已经正确。</p>
+</section>
+<aside>
+<section><div class="section-heading"><h2>当前格定位</h2><span id="slot-badge" class="badge"></span></div><dl id="identity" class="identity"></dl><div class="toolbar"><a id="art-link" target="_blank" rel="noopener">打开规范人物帧</a><a id="master-link" target="_blank" rel="noopener">打开母版格</a><a id="sheet-link" target="_blank" rel="noopener" hidden>打开整张母图</a></div><p id="master-info" class="path"></p><p id="sheet-info" class="path" hidden></p><details><summary>方案与素材来源</summary><pre id="provenance"></pre></details></section>
+<section><div class="section-heading"><h2>人工问题记录</h2><span id="review-dirty" class="badge">未修改</span></div><label>本格结论<select id="review-status"><option value="unreviewed">待审阅</option><option value="needs-fix">需要修正</option><option value="accepted">本格人工通过</option></select></label><fieldset id="tags"><legend>需要复核的部位</legend><label><input type="checkbox" value="angle">角度／透视</label><label><input type="checkbox" value="proportion">人物比例</label><label><input type="checkbox" value="arms">手臂／左右关系</label><label><input type="checkbox" value="legs">迈腿／承重</label><label><input type="checkbox" value="cloth">裙摆／头发／衣袖</label><label><input type="checkbox" value="alignment">中心／脚底</label><label><input type="checkbox" value="loop">前后格／首尾衔接</label><label><input type="checkbox" value="other">其他</label></fieldset><label>具体观察<textarea id="note" rows="5" maxlength="4000" placeholder="例如：本格近侧右手应继续回到身体旁，人物图却提前大幅前摆。"></textarea></label><div class="toolbar"><button id="save-review" class="primary">保存本格记录</button><button id="reset-review">恢复已保存记录</button></div><p id="review-info" class="hint"></p><p class="hint">记录由人工填写。“本格通过”只指这一格，不自动通过整套动画；保存记录也不会生成图片。</p></section>
+<section><h2>交给修图与复核</h2><div class="toolbar"><button id="download">下载全部问题 JSON</button><button id="copy">复制本格修正说明</button></div><textarea id="handoff" rows="6" readonly hidden aria-label="本格修正说明"></textarea><p class="hint">未保存的本地记录会在下载中单独标明。修改图片后刷新对比，旧结论由素材指纹区分。</p></section>
+</aside>
+</main><footer>共享对比工作台 · 换素材只改映射清单。目标骨架、实际人物和人工验收分别保留。</footer>
+<script type="module" src="comparison.mjs"></script>
+<script type="module" src="tool-shell.mjs"></script>
+</html>

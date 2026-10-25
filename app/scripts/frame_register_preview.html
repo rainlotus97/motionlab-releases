@@ -1,0 +1,46 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>完整母版配准</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#152328;color:#e4ece7;font:16px system-ui}main{max-width:1250px;margin:auto;padding:18px}h1{font-size:23px;margin:0 0 8px}p{line-height:1.6;color:#c1cfca}.layout{display:grid;grid-template-columns:minmax(0,650px) minmax(260px,1fr);gap:24px}.stage{background:#eef1ed;border:1px solid #758b7c;border-radius:8px;text-align:center}.stage.checker{background:conic-gradient(#d9dfd9 25%,#eef1ed 0 50%,#d9dfd9 0 75%,#eef1ed 0) 0 0/32px 32px}canvas{display:block;margin:auto;width:auto;height:65vh;max-width:100%;object-fit:contain}button,select,a{color:inherit}button,select{min-height:44px;padding:9px 13px;background:#2c4247;border:1px solid #82998d;border-radius:5px;font:inherit;cursor:pointer}button[aria-pressed=true]{background:#b8d8c6;color:#172928}.controls{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}label{min-height:44px;display:flex;align-items:center;gap:8px}input[type=checkbox]{width:22px;height:22px}.thumbs{display:flex;flex-wrap:wrap;gap:8px;margin-top:15px}.thumbs button{flex:1;min-width:72px;padding:5px}.thumbs img{width:100%;display:block;background:#edf0eb}.stats{white-space:pre-line;font-variant-numeric:tabular-nums;line-height:1.7}.links{display:flex;gap:18px;flex-wrap:wrap}button:focus-visible{outline:3px solid #eed2a1}@media(max-width:720px){.layout{grid-template-columns:1fr}canvas{height:54vh}h1{font-size:20px}}
+</style><main><h1 id="title"></h1><p>完整母版配准审阅 · 身体高度／中轴／支撑脚对地 · 实际姿态与流畅度另审</p><div class="layout"><div><div id="stage" class="stage"><canvas id="canvas"></canvas></div><div id="thumbs" class="thumbs"></div></div><aside><div class="controls"><button id="play">播放</button><button id="prev">上一帧</button><button id="next">下一帧</button><select id="speed" aria-label="播放速度"><option value="1">正常速度</option><option value="0.5">半速</option></select></div><label><input id="guides" type="checkbox" checked>身体轴／头高／地面</label><label><input id="points" type="checkbox">人工标记点与左右足</label><label><input id="checker" type="checkbox">透明棋盘</label><h2 id="phase"></h2><p id="stats" class="stats"></p><p>Left／Right 是人物自身左右，不能按画面左右交换。标记点来自人工审图，长裙下关节没有自动识别。角度核对只提示偏差，不将错误视角扭成侧面。</p><p class="links"><a href="contact-sheet.png">全部帧并排</a><a href="walk.webp">透明动图</a><a href="report.json">配准记录</a></p></aside></div></main>
+<script id="data" type="application/json">__PAYLOAD__</script><script>
+const data = JSON.parse(document.getElementById('data').textContent)
+const $ = id => document.getElementById(id)
+const ctx = $('canvas').getContext('2d')
+$('canvas').width = data.canvas[0]
+$('canvas').height = data.canvas[1]
+$('title').textContent = data.title
+let index = 0, timer = null, disposed = false
+const images = data.frames.map(f => { const im = new Image(); im.src = `${f.id}.png`; return im })
+function draw () {
+  const f = data.frames[index], [w,h] = data.canvas
+  ctx.clearRect(0,0,w,h); ctx.drawImage(images[index],0,0)
+  if ($('guides').checked) {
+    ctx.lineWidth = 1
+    for (const [color,points] of [['#81968a',[data.origin[0],0,data.origin[0],h]],['#81968a',[0,data.origin[1],w,data.origin[1]]],['#ad9470',[0,f.targetHeadY,w,f.targetHeadY]]]) {
+      ctx.strokeStyle=color;ctx.beginPath();ctx.moveTo(points[0],points[1]);ctx.lineTo(points[2],points[3]);ctx.stroke()
+    }
+  }
+  if ($('points').checked) for (const [name,p] of Object.entries(f.markers)) {
+    ctx.fillStyle=name.startsWith('Left')?'#ba6048':name.startsWith('Right')?'#187fa9':'#3e6551'
+    ctx.beginPath();ctx.arc(p[0],p[1],4,0,Math.PI*2);ctx.fill();ctx.font='12px system-ui';ctx.fillText(name,p[0]+7,p[1]-5)
+  }
+  $('phase').textContent=`${f.id} · 支撑 ${f.support} / 摆动 ${f.swing}`
+  $('stats').textContent=`头部基准 y=${f.markers[data.headMarker][1].toFixed(2)}\n身体中轴 x=${f.markers.bodyAxis[0].toFixed(2)}\n承重脚底 y=${f.markers[f.support+'Contact'][1].toFixed(2)}\n整图等比倍率 ${f.scale.toFixed(5)}\n相对基准倍率差 ${(f.relativeScaleCorrection*100).toFixed(2)}%\n面部参考角差 ${f.faceAngleDeltaDegrees.toFixed(2)}°\n停留 ${f.durationMs}ms`
+  Array.from($('thumbs').children).forEach((b,i)=>b.setAttribute('aria-pressed',String(i===index)))
+}
+function stop(){clearTimeout(timer);timer=null;$('play').textContent='播放'}
+function schedule(){clearTimeout(timer);timer=setTimeout(()=>{if(disposed)return;index=(index+1)%images.length;draw();schedule()},data.frames[index].durationMs/Number($('speed').value))}
+$('play').onclick=()=>{if(timer)return stop();if(document.hidden||disposed)return;$('play').textContent='暂停';schedule()}
+$('prev').onclick=()=>{stop();index=(index+images.length-1)%images.length;draw()}
+$('next').onclick=()=>{stop();index=(index+1)%images.length;draw()}
+$('speed').onchange=()=>{if(timer)schedule()}
+for(const id of ['guides','points'])$(id).onchange=draw
+$('checker').onchange=()=>$('stage').classList.toggle('checker',$('checker').checked)
+document.addEventListener('visibilitychange',()=>{if(document.hidden)stop()})
+window.addEventListener('pagehide',()=>{disposed=true;stop()},{once:true})
+Promise.all(images.map(im=>im.decode())).then(()=>{
+ if(disposed)return
+ data.frames.forEach((f,i)=>{const b=document.createElement('button'),im=document.createElement('img');im.src=images[i].src;im.alt=f.id;b.append(im,document.createTextNode(f.id));b.onclick=()=>{stop();index=i;draw()};$('thumbs').append(b)})
+ draw();if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&!document.hidden)$('play').click()
+}).catch(e=>{$('phase').textContent=`图像加载失败：${e.message}`})
+</script></html>

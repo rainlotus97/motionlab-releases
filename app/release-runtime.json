@@ -1,0 +1,30 @@
+{
+  "pythonVersion": "3.12.15",
+  "pythonRelease": "20261021",
+  "architectures": {
+    "arm64": {
+      "python": {
+        "name": "cpython-3.12.15+20261021-aarch64-apple-darwin-install_only_stripped.tar.gz",
+        "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261021/cpython-3.12.15%2B20261021-aarch64-apple-darwin-install_only_stripped.tar.gz",
+        "sha256": "7b8d00b751db21cea87dc551a8f8165147c5fbc5251d5537d7e5497dde00a219"
+      },
+      "pillow": {
+        "name": "pillow-13.0.0-cp312-cp312-macosx_11_0_arm64.whl",
+        "url": "https://files.pythonhosted.org/packages/39/4b/f2ed53d83aa44ac19599ac0a54897f867fafb95f406980d1e24083f8cbe3/pillow-13.0.0-cp312-cp312-macosx_11_0_arm64.whl",
+        "sha256": "fc481f742ccda20e9ed760b8f978dff50f2a4e9bc253ac167fb0a05b0783ef52"
+      }
+    },
+    "x86_64": {
+      "python": {
+        "name": "cpython-3.12.15+20261021-x86_64-apple-darwin-install_only_stripped.tar.gz",
+        "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20261021/cpython-3.12.15%2B20261021-x86_64-apple-darwin-install_only_stripped.tar.gz",
+        "sha256": "f12e0504397683d6be0745ffd4c39ef45a455cec169adf35c628840d06133773"
+      },
+      "pillow": {
+        "name": "pillow-13.0.0-cp312-cp312-macosx_10_13_x86_64.whl",
+        "url": "https://files.pythonhosted.org/packages/7a/b8/58d79332229482eb0d27c82973850808c19d37e5bdc14443d3417bd373f5/pillow-13.0.0-cp312-cp312-macosx_10_13_x86_64.whl",
+        "sha256": "67c8d44ad89fa7eb88de5d6ef6199b1e03dd24974f85a67639fc8badb801fe79"
+      }
+    }
+  }
+}

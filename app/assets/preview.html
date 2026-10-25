@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>角色动作工坊 · 预览</title>
+  <style>
+    :root{color-scheme:dark;font:14px/1.5 system-ui,sans-serif;color:#e4e9ed;background:#111a22;--line:#34414c;--accent:#b6ddc6}
+    *{box-sizing:border-box}body{margin:0}button,input,select{font:inherit}button,select,input[type=number]{min-height:44px;border:1px solid var(--line);border-radius:6px;color:inherit;background:#1b2935;padding:6px 12px}button{cursor:pointer}button:hover{border-color:var(--accent)}button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}input[type=checkbox]{width:18px;height:18px;accent-color:#b6ddc6}input[type=range]{width:100%;min-height:44px;accent-color:#b6ddc6}button:disabled{opacity:.4;cursor:default}
+    header{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 28px;border-bottom:1px solid var(--line)}header strong{font-size:18px;letter-spacing:.04em}header small{color:#9aaebd}.layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:20px;padding:22px 28px;max-width:1500px;margin:auto}.stage-wrap{min-width:0}.stage{position:relative;height:min(57vh,540px);min-height:280px;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#dae0df}canvas{width:100%;height:100%;display:block}.status{min-height:30px;margin:10px 0;color:var(--accent)}.bar{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.bar label{display:flex;align-items:center;gap:6px;min-height:44px}.primary{color:#101d23;background:var(--accent);border-color:var(--accent)}.muted{color:#9aaebd}.timeline{margin-top:16px;padding:16px;background:#192630;border:1px solid var(--line);border-radius:8px}.timeline-head{display:flex;justify-content:space-between;gap:12px}.segments{display:flex;gap:3px;height:9px;margin:4px 0 10px}.segments i{display:block;min-width:2px;background:#3d505f;border-radius:2px}.segments i.active{background:var(--accent)}aside{display:flex;flex-direction:column;gap:16px}section.panel{border:1px solid var(--line);border-radius:8px;padding:16px;background:#17232d}.field{display:grid;gap:5px;margin-bottom:12px}.field:last-child{margin-bottom:0}.field>span{color:#a7b8c6;font-size:12px;letter-spacing:.04em}.panel h2{font-size:14px;font-weight:600;margin:0 0 12px}.check{display:flex;align-items:center;gap:9px;min-height:44px}.readout{margin:0;white-space:pre-wrap;word-break:break-word;font:12px/1.7 ui-monospace,monospace;max-height:230px;overflow:auto}#events{min-height:84px;color:#b6ddc6}footer{max-width:1500px;margin:0 auto;padding:0 28px 24px;font-size:12px;color:#8ea2b2}@media(max-width:850px){.layout{grid-template-columns:1fr;padding:16px}aside{display:grid;grid-template-columns:1fr 1fr}header{padding:16px}header small{display:none}.stage{height:50vh}footer{padding:0 16px 20px}}@media(max-width:520px){aside{grid-template-columns:1fr}.stage{min-height:230px}.timeline-head{flex-direction:column;gap:0}}
+  </style>
+</head>
+<body>
+  <header><strong id="title">角色动作工坊</strong><small>图像、锚点与节奏一起检查</small></header>
+  <main class="layout">
+    <div class="stage-wrap">
+      <div class="stage" id="stage"><canvas id="canvas" aria-label="角色动作画布"></canvas></div>
+      <div class="status" id="status" role="status"></div>
+      <div class="bar">
+        <button id="play" class="primary">暂停</button><button id="restart">重播</button><button id="prev" aria-label="上一播放段">上一帧</button><button id="next" aria-label="下一播放段">下一帧</button>
+        <label>速度<select id="speed"><option value="0.25">0.25×</option><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option></select></label>
+        <label>显示<select id="zoom"><option value="auto">适合画布</option><option value="64">小尺寸64px</option><option value="128">128px</option><option value="256">256px</option><option value="512">512px</option></select></label>
+      </div>
+      <section class="timeline">
+        <div class="timeline-head"><strong id="frame-label"></strong><span id="time-label" class="muted"></span></div>
+        <input type="range" id="scrub" min="0" max="0" value="0" aria-label="逐播放段拖动">
+        <div class="segments" id="segments" aria-hidden="true"></div>
+        <span class="muted" id="counts"></span>
+      </section>
+    </div>
+    <aside>
+      <section class="panel">
+        <div class="field"><span>衣装／外观</span><select id="variant" aria-label="衣装或外观"></select></div>
+        <div class="field"><span>动作</span><select id="action" aria-label="动作"></select></div>
+        <div class="field"><span>一次性动作结束后</span><select id="follow" aria-label="后继动作"></select></div>
+        <div class="field"><span>背景</span><select id="backdrop"><option value="checker">透明棋盘</option><option value="light">浅色</option><option value="dark">深色</option></select></div>
+        <label class="check"><input type="checkbox" id="marks" checked>显示根与标记</label>
+        <label class="check"><input type="checkbox" id="ghost">上一段参考影像（只预览）</label>
+        <label class="check"><input type="checkbox" id="root">预览根位移轨迹</label>
+        <label class="check"><input type="checkbox" id="motion">减弱动态</label>
+      </section>
+      <section class="panel"><h2>当前帧数据</h2><pre class="readout" id="metadata"></pre></section>
+      <section class="panel"><h2>预览事件 · 不发伤害或奖励</h2><pre class="readout" id="events" aria-live="off"></pre><button id="clear-log">清空</button></section>
+    </aside>
+  </main>
+  <footer>技术预览不等于解剖、观感或游戏命中通过。角色来自实际图集；参考影像、根标记和位移轨迹不进入导出美术。</footer>
+  <script type="application/json" id="motion-data">__MOTION_DATA__</script>
+  <script>
+    const data = JSON.parse(document.querySelector('#motion-data').textContent)
+    const $ = id => document.getElementById(id)
+    const ctx = $('canvas').getContext('2d')
+    const media = matchMedia('(prefers-reduced-motion: reduce)')
+    const followByAction = new Map()
+    const emitted = new Set()
+    const listeners = []
+    let action, image, selectedVariant, selectedAction, loaded = false, failed = false
+    let step = 0, within = 0, cycle = 0, instance = 0, request = 0, raf = 0, last = null, playing = true, finished = false
+    let logs = []
+
+    function listen(target, name, callback) {
+      target.addEventListener(name, callback)
+      listeners.push(() => target.removeEventListener(name, callback))
+    }
+    function option(select, value, label) {
+      const node = document.createElement('option')
+      node.value = value
+      node.textContent = label
+      select.append(node)
+    }
+    function reduced() { return $('motion').checked }
+    function key() { return selectedVariant + '/' + selectedAction }
+    function duration() { return action.durations_ms.reduce((sum, value) => sum + value, 0) }
+    function reportEvents() {
+      if (!playing || !loaded || reduced()) return
+      const stamp = instance + ':' + cycle + ':' + step
+      if (emitted.has(stamp)) return
+      emitted.add(stamp)
+      for (const event of action.events || []) {
+        if (event.step !== step) continue
+        logs.push('预览 ' + selectedAction + ' #' + instance + ' · 段' + (step + 1) + ' · ' + event.name + (event.payload === undefined ? '' : ' ' + JSON.stringify(event.payload)))
+      }
+      logs = logs.slice(-60)
+      $('events').textContent = logs.join('\n')
+    }
+    function selectAction(id, startPlaying = playing) {
+      selectedAction = id
+      $('action').value = id
+      action = data.variants[selectedVariant].actions[id]
+      step = within = cycle = 0
+      finished = false
+      instance++
+      emitted.clear()
+      playing = startPlaying
+      last = null
+      loaded = failed = false
+      const token = ++request
+      image = new Image()
+      const pending = image
+      pending.onload = () => {
+        if (token !== request) return
+        loaded = true
+        reportEvents()
+        render()
+      }
+      pending.onerror = () => {
+        if (token !== request) return
+        failed = true
+        render()
+      }
+      pending.src = action.atlas + (action.atlas.includes('?') ? '&' : '?') + 'v=' + action.sha256
+      $('scrub').max = action.sequence.length - 1
+      $('scrub').value = 0
+      $('segments').replaceChildren()
+      for (const ms of action.durations_ms) {
+        const segment = document.createElement('i')
+        segment.style.flex = String(ms)
+        $('segments').append(segment)
+      }
+      $('follow').replaceChildren()
+      option($('follow'), '', '保留终帧')
+      for (const [name, value] of Object.entries(data.variants[selectedVariant].actions)) option($('follow'), name, value.name || name)
+      $('follow').value = followByAction.get(key()) || ''
+      $('follow').disabled = action.loop
+      render()
+    }
+    function selectVariant(id) {
+      const previous = selectedAction
+      selectedVariant = id
+      $('action').replaceChildren()
+      const names = Object.keys(data.variants[id].actions)
+      for (const name of names) option($('action'), name, data.variants[id].actions[name].name || name)
+      selectAction(names.includes(previous) ? previous : names[0])
+    }
+    function seek(index) {
+      playing = false
+      finished = false
+      step = Math.max(0, Math.min(action.sequence.length - 1, index))
+      within = 0
+      last = null
+      render()
+    }
+    function advance(delta) {
+      within += delta
+      let guard = 0
+      while (within >= action.durations_ms[step]) {
+        within -= action.durations_ms[step]
+        if (step + 1 < action.sequence.length) step++
+        else if (action.loop) { step = 0; cycle++; emitted.clear() }
+        else {
+          const follow = followByAction.get(key())
+          if (follow) { selectAction(follow, true); return }
+          within = action.durations_ms[step]
+          playing = false
+          finished = true
+          return
+        }
+        reportEvents()
+        if (++guard > 10000) {
+          playing = false
+          $('status').textContent = '单次推进过多，请检查时长或降低预览速度。'
+          return
+        }
+      }
+    }
+    function position(index, fraction = 0) {
+      if (!$('root').checked || !action.root_motion) return [0, 0]
+      const current = action.root_motion[index]
+      const next = action.root_motion[Math.min(index + 1, action.root_motion.length - 1)]
+      return current.map((value, axis) => value + (next[axis] - value) * fraction)
+    }
+    function render() {
+      if (!action) return
+      const view = $('stage').getBoundingClientRect()
+      const dpr = devicePixelRatio || 1
+      const canvas = $('canvas')
+      const width = Math.round(view.width * dpr), height = Math.round(view.height * dpr)
+      if (canvas.width !== width || canvas.height !== height) { canvas.width = width; canvas.height = height }
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
+      const backdrop = $('backdrop').value
+      ctx.fillStyle = backdrop === 'dark' ? '#17212b' : '#e7e9e4'
+      ctx.fillRect(0, 0, view.width, view.height)
+      if (backdrop === 'checker') {
+        ctx.fillStyle = '#d7dcd7'
+        for (let y = 0; y < view.height; y += 20) for (let x = 0; x < view.width; x += 20) if (((x + y) / 20) % 2 === 0) ctx.fillRect(x, y, 20, 20)
+      }
+      const zoom = $('zoom').value === 'auto' ? Math.min(view.width / data.canvas[0] * .8, view.height / data.canvas[1] * .85, 2) : Number($('zoom').value) / data.canvas[0]
+      const base = [(view.width - data.canvas[0] * zoom) / 2, (view.height - data.canvas[1] * zoom) / 2]
+      const movement = position(step, Math.min(1, within / action.durations_ms[step]))
+      function draw(index, alpha = 1) {
+        if (!loaded) return
+        const frame = action.frames[action.sequence[index]]
+        const rect = frame.rect
+        ctx.globalAlpha = alpha
+        ctx.drawImage(image, rect[0], rect[1], rect[2] - rect[0], rect[3] - rect[1], base[0] + movement[0] * zoom, base[1] + movement[1] * zoom, data.canvas[0] * zoom, data.canvas[1] * zoom)
+        ctx.globalAlpha = 1
+      }
+      if ($('ghost').checked) draw(step ? step - 1 : action.loop ? action.sequence.length - 1 : 0, .18)
+      draw(step)
+      const frame = action.frames[action.sequence[step]]
+      if ($('root').checked && action.root_motion) {
+        ctx.beginPath()
+        ctx.strokeStyle = '#9e5c29'
+        action.root_motion.forEach((point, i) => {
+          const x = base[0] + (data.origin[0] + point[0]) * zoom
+          const y = base[1] + (data.origin[1] + point[1]) * zoom
+          if (i) ctx.lineTo(x, y); else ctx.moveTo(x, y)
+        })
+        ctx.stroke()
+      }
+      if ($('marks').checked) {
+        for (const [name, point] of Object.entries({root:frame.origin, ...(frame.markers || {})})) {
+          const x = base[0] + (point[0] + movement[0]) * zoom, y = base[1] + (point[1] + movement[1]) * zoom
+          ctx.strokeStyle = '#9b4f37'
+          ctx.beginPath();ctx.moveTo(x - 5, y);ctx.lineTo(x + 5, y);ctx.moveTo(x, y - 5);ctx.lineTo(x, y + 5);ctx.stroke()
+          ctx.fillStyle = '#75422f';ctx.font = '11px system-ui';ctx.fillText(name, x + 7, y - 5)
+        }
+      }
+      $('play').textContent = playing && !finished ? '暂停' : finished ? '重播' : '播放'
+      $('scrub').value = step
+      $('frame-label').textContent = '播放段 ' + (step + 1) + ' / ' + action.sequence.length + ' · 源帧 ' + action.sequence[step]
+      const elapsed = action.durations_ms.slice(0, step).reduce((sum, ms) => sum + ms, 0) + within
+      $('time-label').textContent = Math.round(elapsed) + ' / ' + duration() + 'ms · ' + (action.loop ? '循环' : '一次性')
+      $('counts').textContent = action.frames.length + ' 张源帧 · ' + action.sequence.length + ' 个播放段 · 当前 ' + action.durations_ms[step] + 'ms'
+      for (const [i, node] of [...$('segments').children].entries()) node.classList.toggle('active', i === step)
+      $('status').textContent = failed ? '图像未加载；仍可检查帧数据、切换与返回。' : !loaded ? '正在载入图集…' : reduced() ? '减弱动态：静态帧，可手动逐帧检查。' : finished ? '一次性动作已结束，保留终帧。' : playing ? '正在播放' : '已暂停'
+      $('metadata').textContent = JSON.stringify({variant:selectedVariant,action:selectedAction,instance,frame:action.sequence[step],source:frame.source,sourceRect:frame.sourceRect,origin:frame.origin,markers:frame.markers,root_motion:action.root_motion?.[step] || [0,0]}, null, 2)
+    }
+    function tick(stamp) {
+      const delta = last === null ? 0 : stamp - last
+      last = stamp
+      if (playing && loaded && !document.hidden && !reduced()) { reportEvents(); advance(delta * Number($('speed').value)); render() }
+      raf = requestAnimationFrame(tick)
+    }
+    $('title').textContent = data.character.name + ' · 动作工坊'
+    document.title = data.character.name + ' · 动作预览'
+    for (const [id, value] of Object.entries(data.variants)) option($('variant'), id, value.name || id)
+    $('motion').checked = media.matches
+    listen($('variant'), 'change', () => selectVariant($('variant').value))
+    listen($('action'), 'change', () => selectAction($('action').value))
+    listen($('follow'), 'change', () => followByAction.set(key(), $('follow').value))
+    listen($('play'), 'click', () => {
+      if (finished) selectAction(selectedAction, true)
+      else { playing = !playing; last = null; reportEvents(); render() }
+    })
+    listen($('restart'), 'click', () => selectAction(selectedAction, true))
+    listen($('prev'), 'click', () => seek(step - 1))
+    listen($('next'), 'click', () => seek(step + 1))
+    listen($('scrub'), 'input', () => seek(Number($('scrub').value)))
+    for (const id of ['zoom','backdrop','marks','ghost','root','motion']) listen($(id), 'change', () => { last = null; render() })
+    listen($('clear-log'), 'click', () => { logs = []; $('events').textContent = '' })
+    listen(document, 'visibilitychange', () => { last = null })
+    listen(window, 'resize', render)
+    listen(media, 'change', () => { $('motion').checked = media.matches; last = null; render() })
+    listen(window, 'pagehide', event => {
+      cancelAnimationFrame(raf)
+      if (event.persisted) { last = null; return }
+      request++
+      if (image) image.onload = image.onerror = null
+      for (const remove of listeners) remove()
+    })
+    listen(window, 'pageshow', event => {
+      if (event.persisted) { last = null; raf = requestAnimationFrame(tick) }
+    })
+    selectVariant(Object.keys(data.variants)[0])
+    raf = requestAnimationFrame(tick)
+  </script>
+</body>
+</html>
